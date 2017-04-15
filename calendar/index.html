@@ -209,7 +209,25 @@ color: black !important;
                 <div id="calendar"></div>
             </div>
         </div>
+    </div>
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">New event on <span id="myModalLabelDate">%DATE%</span></h4>
+          </div>
+          <div class="modal-body">
+            <button class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Training</button>
+        		<button class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Tournamet</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
