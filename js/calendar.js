@@ -1218,7 +1218,7 @@ if(!String.prototype.formatNum) {
 			event.stopPropagation();
 		});
 
-		//this._loadTemplate('events-list');
+		this._loadTemplate('events-list');
 
 		downbox.click(function(event) {
 			showEventsList(event, $(this), slider, self);
