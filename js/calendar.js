@@ -1203,6 +1203,7 @@ if(!String.prototype.formatNum) {
 				//downbox.hide();
 			})
 			.on('click', function(event) {
+					$("#myModalLabelDate").text($(this).children('[data-cal-date]').data("cal-date"));
 					$("#myModal").modal();
 			})
 		;
