@@ -1187,7 +1187,7 @@ if(!String.prototype.formatNum) {
 		}
 		var self = this;
 		var activecell = 0;
-		var downbox = $(document.createElement('div')).attr('id', 'cal-day-tick').html('<i class="icon-chevron-down glyphicon glyphicon-chevron-down"></i>');
+		//var downbox = $(document.createElement('div')).attr('id', 'cal-day-tick').html('<i class="icon-chevron-down glyphicon glyphicon-chevron-down"></i>');
 
 		self.context.find('.cal-month-day, .cal-year-box .span3')
 			.on('mouseenter', function() {
@@ -1197,10 +1197,10 @@ if(!String.prototype.formatNum) {
 				if($(this).children('[data-cal-date]').text() == self.activecell) {
 					return;
 				}
-				downbox.show().appendTo(this);
+				//downbox.show().appendTo(this);
 			})
 			.on('mouseleave', function() {
-				downbox.hide();
+				//downbox.hide();
 			})
 			.on('click', function(event) {
 				if($('.events-list', this).length == 0) {
@@ -1220,9 +1220,9 @@ if(!String.prototype.formatNum) {
 
 		this._loadTemplate('events-list');
 
-		downbox.click(function(event) {
+		/*downbox.click(function(event) {
 			showEventsList(event, $(this), slider, self);
-		});
+		});*/
 	};
 
 	Calendar.prototype.getEventsBetween = function(start, end) {
