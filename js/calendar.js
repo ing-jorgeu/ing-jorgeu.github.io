@@ -1213,10 +1213,10 @@ if(!String.prototype.formatNum) {
 			})
 		;
 
-		var slider = $(document.createElement('div')).attr('id', 'cal-slide-box');
+		/*var slider = $(document.createElement('div')).attr('id', 'cal-slide-box');
 		slider.hide().click(function(event) {
 			event.stopPropagation();
-		});
+		});*/
 
 		this._loadTemplate('events-list');
 
