@@ -10,6 +10,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../css/calendar.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <style>
     .navbar .navbar-nav {
 display: inline-block;
@@ -227,7 +228,53 @@ color: black !important;
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="training">...</div>
+              <div role="tabpanel" class="tab-pane active" id="training">
+                <form class="form-horizontal col-xs-12 col-md-8 col-md-offset-2" style="color: white;">
+                    <div class="form-group">
+                        <label for="inputDate" class="col-sm-2 control-label">Date/Hour</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputDate" placeholder="when">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCategory" class="col-sm-2 control-label">Category</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputExercise" class="col-sm-2 control-label">Exercise</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputParticipants" class="col-sm-2 control-label">Participants</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputParticipants" placeholder="participants">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Continue</button>
+                        </div>
+                    </div>
+                  </form>
+              </div>
               <div role="tabpanel" class="tab-pane" id="tournament">...</div>
             </div>
 
@@ -247,21 +294,72 @@ color: black !important;
     <script src="../js/moment-with-locales.js"></script>
     <script src="../js/calendar.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
     <script>
-        var calendar = $("#calendar").calendar(
-        {
-            tmpl_path: "tmpls/",
-            events_source: [
-                {
-                    "id": 293,
-                    "title": "Event 1",
-                    "url": "http://example.com",
-                    "class": "event-important",
-                    "start": moment().unix()*1000,
-                    "end": moment().unix()*1000
+        $(function() {
+            $('#inputDate').datetimepicker();
+
+            var substringMatcher = function(strs) {
+            return function findMatches(q, cb) {
+              var matches, substringRegex;
+
+              // an array that will be populated with substring matches
+              matches = [];
+
+              // regex used to determine if a string contains the substring `q`
+              substrRegex = new RegExp(q, 'i');
+
+              // iterate through the pool of strings and for any string that
+              // contains the substring `q`, add it to the `matches` array
+              $.each(strs, function(i, str) {
+                if (substrRegex.test(str)) {
+                  matches.push(str);
                 }
-            ]
+              });
+
+              cb(matches);
+            };
+          };
+
+          var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+          ];
+
+          $('#inputParticipants').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+          },
+          {
+            name: 'states',
+            source: substringMatcher(states)
+          });
+
+          var calendar = $("#calendar").calendar(
+          {
+              tmpl_path: "tmpls/",
+              events_source: [
+                  {
+                      "id": 293,
+                      "title": "Event 1",
+                      "url": "http://example.com",
+                      "class": "event-important",
+                      "start": moment().unix()*1000,
+                      "end": moment().unix()*1000
+                  }
+              ]
+          });
+
         });
+
+
     </script>
 </body>
 </html>
