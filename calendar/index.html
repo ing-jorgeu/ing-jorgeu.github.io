@@ -219,8 +219,18 @@ color: black !important;
             <h4 class="modal-title" id="myModalLabel">New event on <span id="myModalLabelDate">%DATE%</span></h4>
           </div>
           <div class="modal-body">
-            <button class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Training</button>
-        		<button class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Tournamet</button>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#training" aria-controls="home" role="tab" data-toggle="tab">Training</a></li>
+              <li role="presentation"><a href="#tournament" aria-controls="profile" role="tab" data-toggle="tab">Tournament</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="training">...</div>
+              <div role="tabpanel" class="tab-pane" id="tournament">...</div>
+            </div>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
