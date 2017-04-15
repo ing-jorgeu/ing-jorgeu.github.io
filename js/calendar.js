@@ -1203,7 +1203,7 @@ if(!String.prototype.formatNum) {
 				//downbox.hide();
 			})
 			.on('click', function(event) {
-				alert('agrega algo el mio');
+					$("#myModal").modal();
 			})
 		;
 
