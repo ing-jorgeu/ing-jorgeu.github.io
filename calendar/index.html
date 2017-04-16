@@ -330,11 +330,11 @@ span.twitter-typeahead{
           };
 
           var fencers = [
-            "Jorge Urbina"
+            {value: "Jorge Urbina"}
           ];
 
           var states = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             local: fencers
           });
@@ -346,7 +346,7 @@ span.twitter-typeahead{
           },
           {
             name: 'states',
-            source: states/*,
+            source: states,
             display: 'value',
             templates: {
               empty: [
@@ -355,7 +355,7 @@ span.twitter-typeahead{
                 '</div>'
               ].join('\n'),
               suggestion: Handlebars.compile('<div><span class="glyphicon glyphicon-user"></span> <strong>{{value}}</strong></div>')
-            }*/
+            }
           });
 
           var calendar = $("#calendar").calendar(
