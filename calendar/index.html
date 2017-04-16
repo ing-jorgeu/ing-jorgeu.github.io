@@ -329,9 +329,16 @@ span.twitter-typeahead{
             };
           };
 
-          var states = [
+          var fencers = [
             {value: "Jorge Urbina"}
           ];
+
+          var states = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            // `states` is an array of state names defined in "The Basics"
+            local: fencers
+          });
 
           $('#inputParticipants').typeahead({
             hint: true,
@@ -340,7 +347,7 @@ span.twitter-typeahead{
           },
           {
             name: 'states',
-            source: substringMatcher(states),
+            source: states,
             templates: {
               empty: [
                 '<div class="empty-message">',
