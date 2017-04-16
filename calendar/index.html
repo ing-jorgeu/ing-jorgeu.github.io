@@ -445,7 +445,7 @@ span.twitter-typeahead{
           });
 
           $('#inputParticipants').bind('typeahead:select', function(ev, suggestion) {
-              $("#participants").append("<div class='col-xs-6 participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div>");
+              $("#participants").append("<div class='col-xs-6'><div class='participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div></div>");
           });
 
           var calendar = $("#calendar").calendar(
