@@ -176,8 +176,10 @@ span.twitter-typeahead{
 .participant{
     background-color: white;
     height: 45px;
-    border: 1px solid black;
+    border: 1px solid #cccccc;
     line-height: 45px;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .participant img {
@@ -282,7 +284,7 @@ span.twitter-typeahead{
                     <div class="form-group">
                         <label for="inputCategory" class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-10">
-                            <select class="form-control">
+                            <select class="form-control" id="inputCategory">
                                 <option>A</option>
                                 <option>B</option>
                                 <option>C</option>
@@ -294,7 +296,7 @@ span.twitter-typeahead{
                     <div class="form-group">
                         <label for="inputExercise" class="col-sm-2 control-label">Exercise</label>
                         <div class="col-sm-10">
-                            <select class="form-control">
+                            <select class="form-control" id="inputExercise">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -316,7 +318,7 @@ span.twitter-typeahead{
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-floppy-disk"></span> Add Training</button>
+                            <button id="new-training" type="submit" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-floppy-disk"></span> Add Training</button>
                         </div>
                     </div>
                   </form>
@@ -448,19 +450,33 @@ span.twitter-typeahead{
               $("#participants").append("<div class='col-xs-6'><div class='participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div></div>");
           });
 
+          var trainings = localStorage.trainings;
+          if (trainings){
+              trainings = JSON.parse(trainings);
+          } else {
+              trainings = [];
+          }
+
           var calendar = $("#calendar").calendar(
           {
               tmpl_path: "tmpls/",
-              events_source: [
-                  {
-                      "id": 293,
-                      "title": "Event 1",
-                      "url": "http://example.com",
-                      "class": "event-important",
-                      "start": moment().unix()*1000,
-                      "end": moment().unix()*1000
-                  }
-              ]
+              events_source: trainings
+          });
+
+          $("#new-training").click(function (e) {
+              var newTraining = {
+                "id": Math.floor(Math.random()*100000),
+                "title": "Training - " + $("#inputCategory").val() + "/" + $("#inputExercise").val(),
+                "category": $("#inputCategory").val(),
+                "exercise": ("#inputExercise").val(),
+                "url": "http://example.com",
+                "class": "event-important",
+                "start": moment($('#inputDate').val() + " " + moment($('#inputTime').val(), "YYYY-MM-DD hh:mm a");.unix()*1000,
+                "end": moment($('#inputDate').val() + " " + moment($('#inputTime').val(), "YYYY-MM-DD hh:mm a");.unix()*1000
+              };
+              trainings.push(newTraining);
+              localStorage.trainings = JSON.stringify(trainings);
+              window.location = "";
           });
 
         });
