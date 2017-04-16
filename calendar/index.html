@@ -302,6 +302,7 @@ span.twitter-typeahead{
     <script src="../js/common.js"></script>
     <script src="../js/bootstrap-datetimepicker.min.js"></script>
     <script src="../js/typeahead.bundle.js"></script>
+    <script src="../js/handlebars-v4.0.5.js"></script>
     <script>
         $(function() {
             $('#inputTime').datetimepicker({format: 'LT'});
@@ -346,7 +347,15 @@ span.twitter-typeahead{
           },
           {
             name: 'states',
-            source: substringMatcher(states)
+            source: substringMatcher(states),
+            templates: {
+              empty: [
+                '<div class="empty-message">',
+                  'unable to find fencer',
+                '</div>'
+              ].join('\n'),
+              suggestion: Handlebars.compile('<div><span class="glyphicon glyphicon-user"></span> <strong>{{value}}</strong></div>')
+            }
           });
 
           var calendar = $("#calendar").calendar(
