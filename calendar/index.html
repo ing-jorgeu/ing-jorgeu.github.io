@@ -172,6 +172,17 @@ span.twitter-typeahead{
 .tt-suggestion img {
     height: 40px;
 }
+
+.participant{
+    background-color: white;
+    height: 45px;
+    border: 1px solid black;
+    line-height: 45px;
+}
+
+.participant img {
+    height: 40px;
+}
     </style>
 </head>
 <body>
@@ -296,6 +307,11 @@ span.twitter-typeahead{
                         <label for="inputParticipants" class="col-sm-2 control-label">Participants</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputParticipants" placeholder="participants">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="participants" class="col-sm-offset-2 col-sm-10">
+
                         </div>
                     </div>
                     <div class="form-group">
@@ -429,7 +445,7 @@ span.twitter-typeahead{
           });
 
           $('#inputParticipants').bind('typeahead:select', function(ev, suggestion) {
-            console.log(suggestion);
+              $("#participants").append("<div class='col-xs-6 participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div>");
           });
 
           var calendar = $("#calendar").calendar(
