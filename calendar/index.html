@@ -563,7 +563,7 @@ span.twitter-typeahead{
                 "start": moment($('#inputDate2').val() + " " + $('#inputTime2').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
                 "end": moment($('#inputDate2').val() + " " + $('#inputTime2').val(), "YYYY-MM-DD hh:mm a").unix()*1000
               };
-              trainings.push(newTournament);
+              tournaments.push(newTournament);
               localStorage.tournaments = JSON.stringify(tournaments);
               window.location = "";
           });
