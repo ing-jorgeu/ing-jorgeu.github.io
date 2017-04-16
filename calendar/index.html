@@ -522,10 +522,17 @@ span.twitter-typeahead{
               trainings = [];
           }
 
+          var tournaments = localStorage.tournaments;
+          if (tournaments){
+              tournaments = JSON.parse(tournaments);
+          } else {
+              tournaments = [];
+          }
+
           var calendar = $("#calendar").calendar(
           {
               tmpl_path: "tmpls/",
-              events_source: trainings
+              events_source: trainings.concat(tournaments)
           });
 
           $("#new-training").click(function (e) {
@@ -549,14 +556,15 @@ span.twitter-typeahead{
                 "id": Math.floor(Math.random()*100000),
                 "title": "Tournament - " + $("#inputCategory2").val() + "/" + $("#inputSuscription").val(),
                 "category": $("#inputCategory2").val(),
-                "exercise": $("#inputSuscription").val(),
+                "suscription": $("#inputSuscription").val(),
+                "type": $('input[name="type"]:checked').val(),
                 "url": "http://example.com",
                 "class": "event-info",
                 "start": moment($('#inputDate2').val() + " " + $('#inputTime2').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
                 "end": moment($('#inputDate2').val() + " " + $('#inputTime2').val(), "YYYY-MM-DD hh:mm a").unix()*1000
               };
-              trainings.push(newTraining);
-              localStorage.trainings = JSON.stringify(trainings);
+              trainings.push(newTournament);
+              localStorage.tournaments = JSON.stringify(tournaments);
               window.location = "";
           });
 
