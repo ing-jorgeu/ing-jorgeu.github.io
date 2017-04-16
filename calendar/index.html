@@ -330,7 +330,57 @@ span.twitter-typeahead{
           };
 
           var fencers = [
-            {value: "Jorge Urbina"}
+            {value: "Jorge Urbina",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Tai Duffel",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Lelah Scarbrough",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Janis Balsamo",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Arden Beech",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Etha Trees",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Alessandra Near",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Jeraldine Saechao",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Nakia Gainer",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Erline Elsass",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Chung Rocker",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Heidi Azar",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Brigid Clowers",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Toby Pellegren",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Armanda Crossley",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Vi Petteway",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Aundrea Seawright",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Norine Maloy",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Phyliss Pilson",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Nicolas Elzy",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Veronique Grunewald",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Felicita Laverriere",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Toya Balcom",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Gwenda Neblett",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Rudolf Kellems",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Emmanuel Mckean",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Tobie Rehman",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Portia Mcmurray",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Aracely Wagoner",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Mckinley Lorentzen",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Marchelle Blanton",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Nu Bly",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Lashonda Shadwick",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Hester Strack",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Jade Lindley",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Debbie Frisch",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Blanch Strouth",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Tamica Kissinger",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Annalee Cousino",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Toi Loflin",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Taisha Makris",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Richie Ye",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Eneida Corey",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Renna Morneau",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Twanda Lant",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Todd Musso",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Gregory Deakins",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Reynalda Collingwood",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Loretta Cartier",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Roseanna Hannold",img: "https://ing-jorgeu.github.io/img/profile.png"},
+            {value: "Ali Procopio",img: "https://ing-jorgeu.github.io/img/profile.png"}
           ];
 
           var states = new Bloodhound({
@@ -354,7 +404,7 @@ span.twitter-typeahead{
                   'unable to find fencer',
                 '</div>'
               ].join('\n'),
-              suggestion: Handlebars.compile('<div><span class="glyphicon glyphicon-user"></span> <strong>{{value}}</strong></div>')
+              suggestion: Handlebars.compile('<div><img src="{{img}}"> <strong>{{value}}</strong></div>')
             }
           });
 
