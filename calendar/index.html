@@ -568,6 +568,17 @@ span.twitter-typeahead{
               window.location = "";
           });
 
+
+          $(window).on('resize', function(e) {
+              var height = $(this).height();
+              $('.cal-month-day').height(function (i,h){return Math.floor((height-90)/6);});
+          });
+
+          setTimeout(function() {
+              $(window).resize();
+          },500);
+
+
         });
 
 
