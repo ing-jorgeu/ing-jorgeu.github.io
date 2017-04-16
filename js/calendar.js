@@ -1204,7 +1204,7 @@ if(!String.prototype.formatNum) {
 			})
 			.on('click', function(event) {
 					$("#myModalLabelDate").text($(this).children('[data-cal-date]').data("cal-date"));
-					$("#inputDate").val($(this).children('[data-cal-date]').data("cal-date"));
+					$("#inputDate,#inputDate2").val($(this).children('[data-cal-date]').data("cal-date"));
 					$("#myModal").modal();
 			})
 		;
