@@ -1203,8 +1203,8 @@ if(!String.prototype.formatNum) {
 				//downbox.hide();
 			})
 			.on('click', function(event) {
-					var moment = moment($(this).children('[data-cal-date]').data("cal-date").trim(),"YYYY-MM-DD");
-					$("#myModalLabelDate").text(moment.format("dddd MMMM Do YYYY"));
+					var themoment = moment($(this).children('[data-cal-date]').data("cal-date").trim(),"YYYY-MM-DD");
+					$("#myModalLabelDate").text(themoment.format("dddd MMMM Do YYYY"));
 					$("#inputDate,#inputDate2").val($(this).children('[data-cal-date]').data("cal-date"));
 					$("#myModal").modal();
 			})
