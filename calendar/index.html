@@ -254,13 +254,13 @@ span.twitter-typeahead{
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">New event on <span id="myModalLabelDate">%DATE%</span></h4>
+            <h4 class="modal-title" id="myModalLabel" style="text-align: center;"><span id="myModalLabelDate">%DATE%</span></h4>
           </div>
           <div class="modal-body">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#training" aria-controls="home" role="tab" data-toggle="tab">Training</a></li>
-              <li role="presentation"><a href="#tournament" aria-controls="profile" role="tab" data-toggle="tab">Tournament</a></li>
+              <li role="presentation" class="active"><a href="#training" aria-controls="home" role="tab" data-toggle="tab">New Training</a></li>
+              <li role="presentation"><a href="#tournament" aria-controls="profile" role="tab" data-toggle="tab">New Tournament</a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -268,14 +268,14 @@ span.twitter-typeahead{
               <div role="tabpanel" class="tab-pane active" id="training">
                 <form class="form-horizontal col-xs-12" style="margin-top: 10px;">
                   <div class="form-group">
-                      <label for="inputDate" class="col-sm-2 control-label">Date</label>
-                      <div class="col-sm-4">
+                      <label for="inputDate" class="col-xs-2 control-label">Date</label>
+                      <div class="col-xs-4">
                           <div class="input-group">
                               <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input disabled type="text" class="form-control" id="inputDate" placeholder="date">
                           </div>
                       </div>
-                      <label for="inputTime" class="col-sm-2 control-label">Hour</label>
-                      <div class="col-sm-4">
+                      <label for="inputTime" class="col-xs-2 control-label">Hour</label>
+                      <div class="col-xs-4">
                           <div class="input-group">
                               <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime" placeholder="when">
                           </div>
@@ -323,7 +323,70 @@ span.twitter-typeahead{
                     </div>
                   </form>
               </div>
-              <div role="tabpanel" class="tab-pane" id="tournament">...</div>
+              <div role="tabpanel" class="tab-pane" id="tournament">
+                <form class="form-horizontal col-xs-12" style="margin-top: 10px;">
+                  <div class="form-group">
+                      <label for="inputDate2" class="col-xs-2 control-label">Date</label>
+                      <div class="col-xs-4">
+                          <div class="input-group">
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input disabled type="text" class="form-control" id="inputDate2" placeholder="date">
+                          </div>
+                      </div>
+                      <label for="inputTime2" class="col-xs-2 control-label">Hour</label>
+                      <div class="col-xs-4">
+                          <div class="input-group">
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime2" placeholder="when">
+                          </div>
+                      </div>
+                  </div>
+                    <div class="form-group">
+                        <label for="inputCategory2" class="col-sm-2 control-label">Category</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="inputCategory2">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputExercise2" class="col-sm-2 control-label">Suscription</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="inputExercise2">
+                                <option>Open</option>
+                                <option>Private</option>
+                                <option>RFID</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="col-sm-2 control-label">Type</label>
+                        <div class="col-xs-5">
+                          <div class="radio">
+                              <label>
+                                <input type="radio" name="type" id="optionsRadios1" value="popular" checked>
+                                Popular
+                              </label>
+                          </div>
+                        </div>
+                        <div class="col-xs-5">
+                          <div class="radio">
+                              <label>
+                                <input type="radio" name="type" id="optionsRadios2" value="official">
+                                Official
+                              </label>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="new-tournament" type="submit" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-floppy-disk"></span> Add Tournament</button>
+                        </div>
+                    </div>
+                  </form>
+              </div>
             </div>
 
           </div>
