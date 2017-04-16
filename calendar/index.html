@@ -346,7 +346,7 @@ span.twitter-typeahead{
           },
           {
             name: 'states',
-            source: states,
+            source: states/*,
             display: 'value',
             templates: {
               empty: [
@@ -355,7 +355,7 @@ span.twitter-typeahead{
                 '</div>'
               ].join('\n'),
               suggestion: Handlebars.compile('<div><span class="glyphicon glyphicon-user"></span> <strong>{{value}}</strong></div>')
-            }
+            }*/
           });
 
           var calendar = $("#calendar").calendar(
