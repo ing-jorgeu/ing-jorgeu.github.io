@@ -249,6 +249,22 @@ span.twitter-typeahead{
         </div>
     </div>
 
+    <div class="modal fade" id="events-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Event</h3>
+            </div>
+            <div class="modal-body" style="height: 400px">
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -531,6 +547,7 @@ span.twitter-typeahead{
 
           var calendar = $("#calendar").calendar(
           {
+              modal: "#events-modal",
               tmpl_path: "tmpls/",
               events_source: trainings.concat(tournaments)
           });
