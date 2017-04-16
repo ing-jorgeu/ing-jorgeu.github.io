@@ -548,6 +548,8 @@ span.twitter-typeahead{
           var calendar = $("#calendar").calendar(
           {
               modal: "#events-modal",
+              modal_title: function (event) {return event.title},
+              modal_type: "template",
               tmpl_path: "tmpls/",
               events_source: trainings.concat(tournaments)
           });
