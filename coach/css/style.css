@@ -271,3 +271,8 @@ span.twitter-typeahead{
 form label{
     line-height: 28px;
 }
+
+.calendar-control{
+    color: white;
+    float: right;
+}
