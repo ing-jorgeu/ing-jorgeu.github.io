@@ -9,140 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <style>
-    .navbar .navbar-nav {
-display: inline-block;
-float: none;
-vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-text-align: center;
-}
-
-.navbar a {
-color: black !important;
-}
-
-#leftbar{
-    border-right: 1px solid #0b0b0b;
-}
-
-.leftbar-outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.leftbar-middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.leftbar-inner {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.leftbar-icon{
-    border: 1px solid white;
-    font-size: 30px;
-    padding: 0px;
-    margin: 5px;
-    width: 50px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: width 0.5s;
-}
-
-.leftbar-icon.active a{
-    color: black;
-}
-
-.leftbar-icon.active{
-    background-color: white;
-}
-
-/*#leftbar:hover .leftbar-icon, */#leftbar.open .leftbar-icon{
-    width: 200px;
-}
-
-.leftbar-icon .fa{
-    margin: 0 10px;
-    font-size: 30px;
-    text-align: middle;
-}
-
-.leftbar-icon a{
-    color: white;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 30px;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-}
-
-.leftbar-icon a span{
-    text-align: middle;
-    font-size: 16px;
-}
-
-.leftbar-icon:hover a{
-    color: black;
-}
-
-.leftbar-icon:hover{
-    background-color: white;
-}
-
-#leftbar-toggler {
-    position: absolute;
-    top: 10px;
-    right: 13px;
-    font-size: 20px;
-    color: white;
-    border: 2px solid white;
-    border-radius: 30px;
-    padding: 0 6px;
-    background-color: black;
-}
-
-#leftbar-toggler:hover{
-    color: black;
-    background-color: white;
-}
-
-#content {
-    position: absolute;
-    left: 60px;
-    background-color: #000000;
-    right: 0;
-    bottom: 0;
-    top: 51px;
-    background-attachment: fixed;
-    background-image: url(img/intro.svg);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    z-index: -1;
-
-}
-
-.grid-button{
-    background-color: white;
-    height: 100px;
-    margin-bottom: 30px;
-    text-align: center;
-    width: 100%;
-}
-
-.grid-button span{
-    line-height: 86px;
-}
-    </style>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0;">
@@ -182,7 +49,7 @@ color: black !important;
     </nav>
 
 
-    <div id="leftbar" class="leftbar-outer" style="background-color: black;position: absolute;left: 0;bottom: 0;top: 51px;width: 60px;">
+    <div id="leftbar" class="leftbar-outer">
         <div class="leftbar-middle">
             <div class="leftbar-inner">
                 <a id="leftbar-toggler" href="#" onclick="$('#leftbar').toggleClass('open');$('#leftbar-toggler i.fa').toggleClass('fa-arrow-right').toggleClass('fa-arrow-left');"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -203,44 +70,32 @@ color: black !important;
             <div class="leftbar-inner">
               <div class="container">
                   <div class="row">
-                      <div class="col-xs-1">
-
-                      </div>
-                      <div class="col-xs-4">
+                      <div class="col-xs-offset-2 col-xs-4">
                           <div class="grid-button btn btn-default">
                               <span>J-23 Basel</span>
                           </div>
-                      </div>
-                      <div class="col-xs-2">
-
                       </div>
                       <div class="col-xs-4">
                           <a href="calendar/index.html" class="grid-button btn btn-default" style="padding-top: 25px;">
                               <span style="line-height: 20px;">Next training:<br> Tuesday 2 may 18h00</span>
                           </a>
                       </div>
-                      <div class="col-xs-1">
+                      <div class="col-xs-2">
 
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col-xs-1">
-
-                      </div>
-                      <div class="col-xs-4">
+                      <div class="col-xs-offset-2 col-xs-4">
                           <a href="trainings/new-training.html" class="grid-button btn btn-default">
                               <span>Quick training</span>
                           </a>
-                      </div>
-                      <div class="col-xs-2">
-
                       </div>
                       <div class="col-xs-4">
                           <a href="tournaments/new-tournament.html" class="grid-button btn btn-default">
                               <span>Quick tournament</span>
                           </a>
                       </div>
-                      <div class="col-xs-1">
+                      <div class="col-xs-2">
 
                       </div>
                   </div>
