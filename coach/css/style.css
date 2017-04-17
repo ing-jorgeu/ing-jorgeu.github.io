@@ -275,4 +275,5 @@ form label{
 .calendar-control{
     color: white;
     float: right;
+    padding: 5px;
 }
