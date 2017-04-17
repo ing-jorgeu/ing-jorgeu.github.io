@@ -547,16 +547,14 @@ span.twitter-typeahead{
               "title": "Event 3",
               "url": "#",
               "class": "event-important",
-              "start": "1364320800000",
-              "end": "1364407286400"
+              "start": moment().unix()*1000,
+              "end": moment().unix()*1000 + 60*60*3*1000
             }];
           console.log(trainings);
 
           var calendar = $("#calendar").calendar(
           {
               view: "week",
-              modal: "#events-modal",
-              "modal_title": function (event) {return event.title},
               modal_type: "template",
               tmpl_path: "tmpls/",
               events_source: trainings
