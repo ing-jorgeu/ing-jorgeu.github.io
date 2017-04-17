@@ -408,6 +408,7 @@ span.twitter-typeahead{
     <script src="../js/typeahead.bundle.js"></script>
     <script src="../js/handlebars-v4.0.5.js"></script>
     <script>
+        var calendar;
         $(function() {
             $('#inputTime').datetimepicker({format: 'LT'});
 
@@ -532,7 +533,7 @@ span.twitter-typeahead{
               tournaments = [];
           }
 
-          var calendar = $("#calendar").calendar(
+          calendar = $("#calendar").calendar(
           {
               tmpl_path: "tmpls/",
               events_source: trainings.concat(tournaments)
