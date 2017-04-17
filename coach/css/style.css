@@ -200,6 +200,14 @@ span.twitter-typeahead{
     height: 40px;
 }
 
+#participants > div:nth-of-type(even){
+    padding-right:0;
+}
+
+#participants > div:nth-of-type(odd){
+    padding-left:0;
+}
+
 #fencers-container{
     overflow-y: scroll;
 }
@@ -211,6 +219,7 @@ span.twitter-typeahead{
     line-height: 50px;
     margin-top: 5px;
     display: block;
+    color: black;
 }
 
 .fencer img{
@@ -256,4 +265,8 @@ span.twitter-typeahead{
     width: 30px;
     margin: 30px;
     margin: 0 8px;
+}
+
+form label{
+    line-height: 28px;
 }
