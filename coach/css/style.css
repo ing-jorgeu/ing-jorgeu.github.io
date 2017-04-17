@@ -179,12 +179,13 @@ span.twitter-typeahead{
 }
 
 .tt-suggestion:hover {
-    background-color: black;
-    color: white;
+    background-color: #5eb7c5;
+    color: white !important;
 }
 
 .tt-suggestion img {
     height: 40px;
+    border-radius: 50px;
 }
 
 .participant{
