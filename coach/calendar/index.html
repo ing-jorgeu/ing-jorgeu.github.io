@@ -557,7 +557,7 @@ span.twitter-typeahead{
                 "title": "Training - " + $("#inputCategory").val() + "/" + $("#inputExercise").val(),
                 "category": $("#inputCategory").val(),
                 "exercise": $("#inputExercise").val(),
-                "url": "http://example.com",
+                "url": "../tournaments/new-tournament.html",
                 "class": "event-important",
                 "start": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
                 "end": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000
@@ -587,7 +587,7 @@ span.twitter-typeahead{
 
           $(window).on('resize', function(e) {
               var height = $(this).height();
-              $('.cal-month-day').height(function (i,h){return Math.floor((height-90)/6);});
+              $('.cal-month-day').height(function (i,h){return Math.floor((height-180)/6);});
           });
 
           setTimeout(function() {
