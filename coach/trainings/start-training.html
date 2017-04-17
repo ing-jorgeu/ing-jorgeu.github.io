@@ -11,7 +11,15 @@
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <style>
+        input[type="checkbox"]{
+            margin-top: 7px;
+        }
 
+        .checkbox > label {
+            margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top" style="">
@@ -70,10 +78,10 @@
     <div id="content" class="leftbar-outer">
         <div class="leftbar-middle">
             <div class="leftbar-inner">
-              <div class="container">
+              <div class="container grow-container">
                   <h2>Start training</h2>
                   <div class="row">
-                    <form class="form-horizontal col-xs-12" style="margin-top: 10px;">
+                    <form action="index.html" class="form-horizontal col-xs-12" style="margin-top: 10px;">
                       <div class="form-group">
                           <label for="inputTraining" class="col-xs-2 control-label">Training</label>
                           <div class="col-xs-10">
@@ -84,16 +92,35 @@
                         <div class="form-group">
                           <label for="inputPiste" class="col-xs-2 control-label">Piste</label>
                           <div class="col-xs-10">
-                              <input type="text" class="form-control" id="inputPiste" placeholder="piste">
+                            <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" value="">
+                                  1
+                                </label>
+                                <label>
+                                  <input type="checkbox" value="">
+                                  2
+                                </label>
+                                <label>
+                                  <input type="checkbox" value="">
+                                  3
+                                </label>
+                                <label>
+                                  <input type="checkbox" value="">
+                                  4
+                                </label>
+                            </div>
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="inputCategory" class="col-xs-2 control-label">Category:</label>
-                          <div class="col-xs-4">
+                          <div class="col-xs-10">
                               <span id="inputCategory" style="line-height: 28px;"></span>
                           </div>
-                          <label for="inputExercise" class="col-xs-2 control-label">N. of touch:</label>
-                          <div class="col-xs-4">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputExercise" class="col-xs-2 control-label">Exercises</label>
+                          <div class="col-xs-10">
                               <span id="inputExercise" style="line-height: 28px;"></span>
                           </div>
                         </div>
@@ -130,6 +157,51 @@
                 trainings = [];
             }
 
+            var staticExercises = [
+                {
+                  "id": 0,
+                  "name": "Body Strength Routine",
+                  "theme": "U-654987",
+                  "numberOfTouch": "654",
+                  "dutarion": 25,
+                  "advises": "Don't over do it"
+                },
+                {
+                  "id": 1,
+                  "name": "Flexibility Routine",
+                  "theme": "U-66498",
+                  "numberOfTouch": "21",
+                  "dutarion": 20,
+                  "advises": "Be persistant"
+                },
+                {
+                  "id": 2,
+                  "name": "Speed Routine",
+                  "theme": "U-0903295",
+                  "numberOfTouch": "33",
+                  "dutarion": 14,
+                  "advises": "It takes some time to see the first results"
+                },
+                {
+                  "id": 3,
+                  "name": "Coordination Routine",
+                  "theme": "U-545661",
+                  "numberOfTouch": "47",
+                  "dutarion": 15,
+                  "advises": "Coordination is as important as everything else"
+                }
+            ];
+
+            var exercises = localStorage.exercises;
+            if (exercises){
+                exercises = JSON.parse(exercises);
+            } else {
+                exercises = [];
+            }
+
+            exercises = staticExercises.concat(exercises);
+
+
             $("#inputTraining").change(function(e){
                 var trainingId = $("#inputTraining").val();
                 var currentTraining;
@@ -140,7 +212,26 @@
                     }
                 })
                 $("#inputCategory").text(currentTraining.category);
-                $("#inputExercise").text(currentTraining.exercise);
+                if (typeof currentTraining.exercise == "string"){
+                    var identifier = currentTraining.exercise;
+                    var theExercise;
+                    $.each(exercises, function(){
+                        if (this.id == identifier){
+                            theExercise = this;
+                        }
+                    });
+                    if (theExercise){
+                        currentTraining.exercise = [theExercise];
+                    } else {
+                        currentTraining.exercise = [{name: currentTraining.exercise}];
+                    }
+
+
+                }
+                $("#inputExercise").html('');
+                $.each(currentTraining.exercise, function() {
+                    $("#inputExercise").append("<span>" + this.name + "</span><br>");
+                });
                 $.each(currentTraining.participants, function () {
                     var suggestion = fencers[this];
                     $("#participants").append("<div class='col-xs-6'><div class='participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div></div>");
@@ -152,8 +243,6 @@
             })
 
             $("#inputTraining").change();
-
-            $("form").submit(function (e){e.preventDefault();});
 
         });
     </script>

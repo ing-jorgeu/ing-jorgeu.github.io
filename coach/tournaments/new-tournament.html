@@ -81,11 +81,35 @@
                                   <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputDate" placeholder="date">
                               </div>
                           </div>
-                          <label for="inputTime" class="col-xs-2 control-label">Hour</label>
+                          <label for="inputTime" class="col-xs-2 control-label">Time</label>
                           <div class="col-xs-4">
                               <div class="input-group">
                                   <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime" placeholder="when">
                               </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputEndDate" class="col-xs-2 control-label">End Date</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputEndDate" placeholder="date">
+                              </div>
+                          </div>
+                          <label for="inputEndTime" class="col-xs-2 control-label">End Time</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputEndTime" placeholder="when">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputLocation" class="col-xs-2 control-label">Location</label>
+                          <div class="col-xs-4">
+                              <input type="text" class="form-control" id="inputLocation" placeholder="location">
+                          </div>
+                          <label for="inputNumberOfParticipants" class="col-xs-2 control-label"># Fencers</label>
+                          <div class="col-xs-4">
+                              <input type="text" class="form-control" id="inputNumberOfParticipants" placeholder="# participants">
                           </div>
                       </div>
                         <div class="form-group">
@@ -154,6 +178,8 @@
         $(function() {
             $('#inputTime').datetimepicker({format: 'LT', defaultDate: moment()});
             $('#inputDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment()});
+            $('#inputEndTime').datetimepicker({format: 'LT', defaultDate: moment().add(8,'h')});
+            $('#inputEndDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment().add(8,'h')});
 
 
 
@@ -169,12 +195,14 @@
                   "id": Math.floor(Math.random()*100000),
                   "title": "Tournament - " + $("#inputCategory").val() + "/" + $("#inputSuscription").val(),
                   "category": $("#inputCategory").val(),
+                  "location": $("#inputLocation").val(),
+                  "nOfParticipants": $("#inputNumberOfParticipants").val(),
                   "suscription": $("#inputSuscription").val(),
                   "type": $('input[name="type"]:checked').val(),
                   "url": "http://example.com",
                   "class": "event-info",
                   "start": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
-                  "end": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000
+                  "end": moment($('#inputEndDate').val() + " " + $('#inputEndTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000
                 };
                 tournaments.push(newTournament);
                 localStorage.tournaments = JSON.stringify(tournaments);

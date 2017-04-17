@@ -61,7 +61,7 @@ $('#content').width(function (i,w){return w - 60;});
 $(window).on('resize', function(e) {
     var height = $(this).height();
     var width = $(this).width();
-    $('#leftbar,#content,#fencers-container').height(function (i,h){return height - 51;});
+    $('#leftbar,#content,#fencers-container,.grow-container').height(function (i,h){return height - 51;});
     $('#content,#calendar').width(function (i,w){return width - 60;})
 });
 

@@ -91,10 +91,22 @@
     <script>
         $(function() {
             $.each(fencers, function (index) {
-                if (index % 3 == 0){
-                    $("#fencers").append('<div class="row"></div>');
-                }
-                $("#fencers .row:last").append('<div class="col-xs-4"><a href="../fencers/profile.html?id=' + this.id + '" class="fencer"><img src="' + this.img + '">' + this.value + '</a></div>');
+                $("#fencers").append('<div class="row"></div>');
+                $("#fencers .row:last").append('\
+                    <div class="col-xs-12">\
+                        <a href="../fencers/all-statistics.html?id=' + this.id + '" class="fencer">\
+                        <img src="' + this.img + '">\
+                        <div class="usercard">\
+                            <h2 style="margin-top: 0;">' + this.value + '</h2>\
+                            <span >Senior (22)</span><br>\
+                            <span class="glyphicon glyphicon-calendar"></span> <span id="userbirth">18.10.1995</span><br>\
+                            <span >Club: Sion (CH)</span><br>\
+                            <span >Licence: </span><br>\
+                            <br>\
+                            <span id="userranking">Ranking: 123rd/Word -  19th/Switzerland</span><br>\
+                        </div>\
+                        </a>\
+                    </div>');
             });
 
             $(window).resize();

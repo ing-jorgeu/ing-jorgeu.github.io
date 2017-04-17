@@ -10,6 +10,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-multiselect.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
 </head>
@@ -70,21 +71,35 @@
     <div id="content" class="leftbar-outer">
         <div class="leftbar-middle">
             <div class="leftbar-inner">
-              <div class="container">
+              <div class="container grow-container">
                   <h2>Add training</h2>
                   <div class="row">
                     <form class="form-horizontal col-xs-12" style="margin-top: 10px;">
                       <div class="form-group">
-                          <label for="inputDate" class="col-xs-2 control-label">Date</label>
+                          <label for="inputDate" class="col-xs-2 control-label">Start Date</label>
                           <div class="col-xs-4">
                               <div class="input-group">
-                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputDate" placeholder="date">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputDate" placeholder="startdate">
                               </div>
                           </div>
-                          <label for="inputTime" class="col-xs-2 control-label">Hour</label>
+                          <label for="inputTime" class="col-xs-2 control-label">Start Time</label>
                           <div class="col-xs-4">
                               <div class="input-group">
-                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime" placeholder="when">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime" placeholder="startwhen">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputEndDate" class="col-xs-2 control-label">End Date</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputEndDate" placeholder="startdate">
+                              </div>
+                          </div>
+                          <label for="inputEndTime" class="col-xs-2 control-label">End Time</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputEndTime" placeholder="startwhen">
                               </div>
                           </div>
                       </div>
@@ -101,12 +116,7 @@
                             </div>
                             <label for="inputExercise" class="col-xs-2 control-label">Exercise</label>
                             <div class="col-xs-4">
-                                <select class="form-control" id="inputExercise">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                <select multiple="multiple" class="form-control" id="inputExercise">
                                 </select>
                             </div>
                         </div>
@@ -142,15 +152,67 @@
     <script src="../js/calendar.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/bootstrap-multiselect.js"></script>
     <script src="../js/typeahead.bundle.js"></script>
     <script src="../js/handlebars-v4.0.5.js"></script>
     <script>
         var participants = [];
+
+        var staticExercises = [
+            {
+              "id": 0,
+              "name": "Body Strength Routine",
+              "theme": "U-654987",
+              "numberOfTouch": "654",
+              "dutarion": 25,
+              "advises": "Don't over do it"
+            },
+            {
+              "id": 1,
+              "name": "Flexibility Routine",
+              "theme": "U-66498",
+              "numberOfTouch": "21",
+              "dutarion": 20,
+              "advises": "Be persistant"
+            },
+            {
+              "id": 2,
+              "name": "Speed Routine",
+              "theme": "U-0903295",
+              "numberOfTouch": "33",
+              "dutarion": 14,
+              "advises": "It takes some time to see the first results"
+            },
+            {
+              "id": 3,
+              "name": "Coordination Routine",
+              "theme": "U-545661",
+              "numberOfTouch": "47",
+              "dutarion": 15,
+              "advises": "Coordination is as important as everything else"
+            }
+        ];
+
+        var exercises = localStorage.exercises;
+        if (exercises){
+            exercises = JSON.parse(exercises);
+        } else {
+            exercises = [];
+        }
+
+        exercises = staticExercises.concat(exercises);
+
         $(function() {
             $('#inputTime').datetimepicker({format: 'LT', defaultDate: moment()});
             $('#inputDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment()});
+            $('#inputEndTime').datetimepicker({format: 'LT', defaultDate: moment().add(90,'m')});
+            $('#inputEndDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment().add(90,'m')});
 
+            $.each(exercises,function(){
+                $('#inputExercise').append('<option value="' + this.id + '">' + this.name + '</option>>');
+            });
 
+            $('#inputExercise').multiselect({numberDisplayed: 1});
 
             var states = new Bloodhound({
               datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
@@ -191,11 +253,21 @@
             }
 
             $("#new-training").click(function (e) {
+                var theExercises = [];
+                $.each(exercises, function(){
+                    var values = $("#inputExercise").val();
+                    var index = $.inArray(this.id.toString(), values);
+                    if(index > -1){
+                        theExercises.push(exercises[values[index]]);
+                    }
+                });
+
+
                 var newTraining = {
                   "id": Math.floor(Math.random()*100000),
                   "title": "Training - " + $("#inputCategory").val() + "/" + $("#inputExercise").val(),
                   "category": $("#inputCategory").val(),
-                  "exercise": $("#inputExercise").val(),
+                  "exercise": theExercises,
                   "url": "/coach/trainings/start-training.html",
                   "class": "event-important",
                   "start": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
