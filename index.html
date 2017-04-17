@@ -57,6 +57,14 @@ color: black !important;
     transition: width 0.5s;
 }
 
+.leftbar-icon.active a{
+    color: black;
+}
+
+.leftbar-icon.active{
+    background-color: white;
+}
+
 /*#leftbar:hover .leftbar-icon, */#leftbar.open .leftbar-icon{
     width: 200px;
 }
@@ -122,6 +130,18 @@ color: black !important;
     z-index: -1;
 
 }
+
+.grid-button{
+    background-color: white;
+    height: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.grid-button span{
+    line-height: 86px;
+}
     </style>
 </head>
 <body>
@@ -167,18 +187,66 @@ color: black !important;
             <div class="leftbar-inner">
                 <a id="leftbar-toggler" href="#" onclick="$('#leftbar').toggleClass('open');$('#leftbar-toggler i.fa').toggleClass('fa-arrow-right').toggleClass('fa-arrow-left');"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 <ul style="list-style-type: none;padding-left: 0;">
-                    <li class="leftbar-icon"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-                    <li class="leftbar-icon"><a href="#"><i class="fa fa-bolt" aria-hidden="true" style="margin: 0 16px;"></i> <span>Trainings</span></a></li>
-                    <li class="leftbar-icon"><a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i> <span>Tournaments</span></a></li>
+                    <li class="leftbar-icon active"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                    <li class="leftbar-icon"><a href="trainings/index.html"><i class="fa fa-bolt" aria-hidden="true" style="margin: 0 16px;"></i> <span>Trainings</span></a></li>
+                    <li class="leftbar-icon"><a href="tournaments/new-tournament.html"><i class="fa fa-sitemap" aria-hidden="true"></i> <span>Tournaments</span></a></li>
                     <li class="leftbar-icon"><a href="#"><i class="fa fa-user" aria-hidden="true" style="margin: 0 14px;"></i> <span>Fencers</span></a></li>
                     <li class="leftbar-icon"><a href="#"><i class="fa fa-hourglass" aria-hidden="true" style="margin: 0 11px;"></i> <span>Week Program</span></a></li>
-                    <li class="leftbar-icon"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Calendar</span></a></li>
+                    <li class="leftbar-icon"><a href="calendar/index.html"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Calendar</span></a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div id="content">
+    <div id="content" class="leftbar-outer">
+        <div class="leftbar-middle">
+            <div class="leftbar-inner">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xs-1">
+
+                      </div>
+                      <div class="col-xs-4">
+                          <div class="grid-button btn btn-default">
+                              <span>J-23 Basel</span>
+                          </div>
+                      </div>
+                      <div class="col-xs-2">
+
+                      </div>
+                      <div class="col-xs-4">
+                          <div class="grid-button btn btn-default" style="padding-top: 25px;">
+                              <span style="line-height: 20px;">Next training:<br> Tuesday 2 may 18h00</span>
+                          </div>
+                      </div>
+                      <div class="col-xs-1">
+
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-1">
+
+                      </div>
+                      <div class="col-xs-4">
+                          <div class="grid-button btn btn-default">
+                              <span>Quick training</span>
+                          </div>
+                      </div>
+                      <div class="col-xs-2">
+
+                      </div>
+                      <div class="col-xs-4">
+                          <div class="grid-button btn btn-default">
+                              <span>Quick tournament</span>
+                          </div>
+                      </div>
+                      <div class="col-xs-1">
+
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
 
     </div>
 
