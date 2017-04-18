@@ -216,17 +216,17 @@ span.twitter-typeahead{
 .fencer{
     text-align: center;
     background-color: white;
-    height: 50px;
-    line-height: 50px;
     margin-top: 5px;
     display: block;
     color: black;
 }
 
 .fencer img{
-    height: 40px;
-    float: left;
-    margin-left: 10px;
+    width: 100%;
+}
+
+.fencer h2{
+    color: black;
 }
 
 .fencer:last-of-type{
@@ -254,8 +254,8 @@ span.twitter-typeahead{
     text-align: left;
 }
 
-#userranking{
-    color: white;
+.userranking{
+    color: black;
 }
 
 #usercard{

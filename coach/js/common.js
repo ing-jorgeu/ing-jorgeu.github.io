@@ -49,7 +49,9 @@ var fencers = [
   {id:47, value: "Reynalda Collingwood",img: "https://ing-jorgeu.github.io/img/profile.png"},
   {id:48, value: "Loretta Cartier",img: "https://ing-jorgeu.github.io/img/profile.png"},
   {id:49, value: "Roseanna Hannold",img: "https://ing-jorgeu.github.io/img/profile.png"},
-  {id:50, value: "Ali Procopio",img: "https://ing-jorgeu.github.io/img/profile.png"}
+  {id:50, value: "Ali Procopio",img: "https://ing-jorgeu.github.io/img/profile.png"},
+  {id:51, value: "Yannick Schmidli",img: "https://ing-jorgeu.github.io/coach/img/fencer1.jpg"},
+  {id:52, value: "Nicki Schmidli",img: "https://ing-jorgeu.github.io/coach/img/fencer2.jpg"},
 ];
 
 $("#today").text(moment().format('LLLL'));
