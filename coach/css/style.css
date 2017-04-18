@@ -106,7 +106,7 @@
 #content {
     position: absolute;
     left: 60px;
-    background-color: #232323;
+    background-color: #f3f3f3;
     right: 0;
     bottom: 0;
     top: 51px;
@@ -152,7 +152,7 @@
 }
 
 form label, form span{
-    color: white;
+    color: black;
 }
 
 form button, form .glyphicon{
@@ -195,6 +195,7 @@ span.twitter-typeahead{
     line-height: 45px;
     border-radius: 5px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .participant img {
@@ -219,6 +220,7 @@ span.twitter-typeahead{
     margin-top: 5px;
     display: block;
     color: black;
+    border: 2px solid black;
 }
 
 .fencer img{
@@ -234,7 +236,7 @@ span.twitter-typeahead{
 }
 
 .container h2 {
-    color:white;
+    color:black;
     text-align: center;
 }
 
@@ -304,4 +306,11 @@ form label{
 
 ul.multiselect-container.dropdown-menu li a label{
     padding-top: 3px;
+}
+
+.btn{
+    border: 2px solid black;
+    background: none;
+    font-weight: bold;
+    border-radius: 15px;
 }
