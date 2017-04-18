@@ -70,3 +70,7 @@ $(window).on('resize', function(e) {
 setTimeout(function() {
     $(window).resize();
 },500);
+
+setTimeout(function() {
+    $(window).resize();
+},2000);
