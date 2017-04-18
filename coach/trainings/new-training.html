@@ -103,23 +103,46 @@
                               </div>
                           </div>
                       </div>
+
+                      <div class="form-group">
+                          <label for="inputName" class="col-xs-2 control-label">Name</label>
+                          <div class="col-xs-10">
+                              <input type="text" class="form-control" id="inputName" placeholder="Name">
+                          </div>
+                      </div>
+
                         <div class="form-group">
+                            <label for="inputTheme" class="col-xs-2 control-label">Theme</label>
+                            <div class="col-xs-4">
+                                <select class="form-control" id="inputTheme">
+                                    <option value="Attaque">Attaque</option>
+                                    <option value="Parade-riposte">Parade-riposte</option>
+                                    <option value="Contre-attaque">Contre-attaque</option>
+                                    <option value="Arrêt">Arrêt</option>
+                                </select>
+                            </div>
                             <label for="inputCategory" class="col-xs-2 control-label">Category</label>
                             <div class="col-xs-4">
                                 <select class="form-control" id="inputCategory">
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="E">E</option>
-                                </select>
-                            </div>
-                            <label for="inputExercise" class="col-xs-2 control-label">Exercise</label>
-                            <div class="col-xs-4">
-                                <select multiple="multiple" class="form-control" id="inputExercise">
+                                    <option value="Poussin">Poussin</option>
+                                    <option value="Pupille">Pupille</option>
+                                    <option value="Benjamin">Benjamin</option>
+                                    <option value="Minime">Minime</option>
+                                    <option value="Cadet">Cadet</option>
+                                    <option value="Junior">Junior</option>
+                                    <option value="Senior">Senior</option>
                                 </select>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                          <label for="inputExercise" class="col-xs-2 control-label">Exercise</label>
+                          <div class="col-xs-10">
+                              <select multiple="multiple" class="form-control" id="inputExercise">
+                              </select>
+                          </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="inputParticipants" class="col-xs-2 control-label">Participants</label>
                             <div class="col-xs-10">
@@ -265,8 +288,9 @@
 
                 var newTraining = {
                   "id": Math.floor(Math.random()*100000),
-                  "title": "Training - " + $("#inputCategory").val() + "/" + $("#inputExercise").val(),
+                  "title": $("#inputName").val(),
                   "category": $("#inputCategory").val(),
+                  "theme": $("#inputTheme").val(),
                   "exercise": theExercises,
                   "url": "/coach/trainings/start-training.html",
                   "class": "event-important",
