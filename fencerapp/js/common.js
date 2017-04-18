@@ -49,7 +49,9 @@ var fencers = [
   {id:47, value: "Reynalda Collingwood",img: "https://ing-jorgeu.github.io/img/profile.png"},
   {id:48, value: "Loretta Cartier",img: "https://ing-jorgeu.github.io/img/profile.png"},
   {id:49, value: "Roseanna Hannold",img: "https://ing-jorgeu.github.io/img/profile.png"},
-  {id:50, value: "Ali Procopio",img: "https://ing-jorgeu.github.io/img/profile.png"}
+  {id:50, value: "Ali Procopio",img: "https://ing-jorgeu.github.io/img/profile.png"},
+  {id:51, value: "Yannick Schmidli",img: "https://ing-jorgeu.github.io/coach/img/fencer1.jpg"},
+  {id:52, value: "Nicki Schmidli",img: "https://ing-jorgeu.github.io/coach/img/fencer2.jpg"}
 ];
 
 $("#today").text(moment().format('LLLL'));
@@ -61,7 +63,7 @@ $('#content').width(function (i,w){return w - 60;});
 $(window).on('resize', function(e) {
     var height = $(this).height();
     var width = $(this).width();
-    $('#leftbar,#content,#videos').height(function (i,h){return height - 51;});
+    $('#leftbar,#content,#videos,.grow-container').height(function (i,h){return height - 51;});
     $('#content,#calendar').width(function (i,w){return width - 60;})
 });
 
