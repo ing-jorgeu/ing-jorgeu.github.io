@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Seyfor</title>
+    <meta name="description" content="Fencing">
+    <meta name="author" content="ing.jorgeu@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-multiselect.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top" style="">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="../img/seyfor_sport_technology_logo.png">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a id="today">Today</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" style="">
+                Jean-Pierre TORDA
+              </a>
+            </li>
+            <li>
+              <a href="#" style="padding: 2px 2px 2px 0;">
+                <img src="../img/coach-jean-pierre-torda.jpg" style="height: 46px;border: 2px solid black;border-radius: 70px;width: 46px;">
+              </a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div id="leftbar" class="leftbar-outer">
+        <div class="leftbar-middle">
+            <div class="leftbar-inner">
+                <a id="leftbar-toggler" href="#" onclick="$('#leftbar').toggleClass('open');$('#leftbar-toggler .glyphicon').toggleClass('glyphicon-menu-right').toggleClass('glyphicon-menu-left');"><span class="glyphicon glyphicon-menu-right" aria-hidden="true" style="font-size: 17px;"></span></a>
+                <ul style="list-style-type: none;padding-left: 0;">
+                    <li class="leftbar-icon"><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                    <li class="leftbar-icon active"><a href="../trainings/index.html"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Trainings</span></a></li>
+                    <li class="leftbar-icon"><a href="../tournaments/new-tournament.html"><i class="fa fa-trophy" aria-hidden="true"></i> <span>Tournaments</span></a></li>
+                    <li class="leftbar-icon"><a href="../fencers/index.html"><i class="fa fa-users" aria-hidden="true"></i> <span>Fencers</span></a></li>
+                    <!--<li class="leftbar-icon"><a href="#"><i class="fa fa-hourglass" aria-hidden="true" style="margin: 0 11px;"></i> <span>Week Program</span></a></li>-->
+                    <li class="leftbar-icon"><a href="../calendar/index.html"><i class="fa fa-calendar" aria-hidden="true"></i> <span>Calendar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="leftbar-outer">
+        <div class="leftbar-middle">
+            <div class="leftbar-inner">
+              <div class="container grow-container">
+                  <h2>Add training</h2>
+                  <div class="row">
+                    <form class="form-horizontal col-xs-12" style="margin-top: 10px;">
+                      <div class="form-group">
+                          <label for="inputDate" class="col-xs-2 control-label">Start Date</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputDate" placeholder="startdate">
+                              </div>
+                          </div>
+                          <label for="inputTime" class="col-xs-2 control-label">Start Time</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputTime" placeholder="startwhen">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputEndDate" class="col-xs-2 control-label">End Date</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div><input type="text" class="form-control" id="inputEndDate" placeholder="startdate">
+                              </div>
+                          </div>
+                          <label for="inputEndTime" class="col-xs-2 control-label">End Time</label>
+                          <div class="col-xs-4">
+                              <div class="input-group">
+                                  <div class="input-group-addon"><span class="glyphicon glyphicon-time"></span></div><input type="text" class="form-control" id="inputEndTime" placeholder="startwhen">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="inputName" class="col-xs-2 control-label">Name</label>
+                          <div class="col-xs-10">
+                              <input type="text" class="form-control" id="inputName" placeholder="Name">
+                          </div>
+                      </div>
+
+                        <div class="form-group">
+                            <label for="inputTheme" class="col-xs-2 control-label">Theme</label>
+                            <div class="col-xs-4">
+                                <select class="form-control" id="inputTheme">
+                                    <option value="Attaque">Attaque</option>
+                                    <option value="Parade-riposte">Parade-riposte</option>
+                                    <option value="Contre-attaque">Contre-attaque</option>
+                                    <option value="Arrêt">Arrêt</option>
+                                </select>
+                            </div>
+                            <label for="inputCategory" class="col-xs-2 control-label">Category</label>
+                            <div class="col-xs-4">
+                                <select class="form-control" id="inputCategory">
+                                    <option value="Poussin">Poussin</option>
+                                    <option value="Pupille">Pupille</option>
+                                    <option value="Benjamin">Benjamin</option>
+                                    <option value="Minime">Minime</option>
+                                    <option value="Cadet">Cadet</option>
+                                    <option value="Junior">Junior</option>
+                                    <option value="Senior">Senior</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputExercise" class="col-xs-2 control-label">Exercise</label>
+                          <div class="col-xs-10">
+                              <select multiple="multiple" class="form-control" id="inputExercise">
+                              </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputParticipants" class="col-xs-2 control-label">Participants</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputParticipants" placeholder="participants">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div id="participants" class="col-xs-offset-2 col-xs-10">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-2 col-xs-10">
+                                <button id="new-training" type="submit" class="btn btn-default" style="float: right;"><span class="glyphicon glyphicon-floppy-disk"></span> Add Training</button>
+                            </div>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/underscore-min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/60130e230f.js"></script>
+    <script src="../js/moment-with-locales.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/bootstrap-multiselect.js"></script>
+    <script src="../js/typeahead.bundle.js"></script>
+    <script src="../js/handlebars-v4.0.5.js"></script>
+    <script>
+        var participants = [];
+
+        var staticExercises = [
+            {
+              "id": 0,
+              "name": "Body Strength Routine",
+              "theme": "U-654987",
+              "numberOfTouch": "654",
+              "dutarion": 25,
+              "advises": "Don't over do it"
+            },
+            {
+              "id": 1,
+              "name": "Flexibility Routine",
+              "theme": "U-66498",
+              "numberOfTouch": "21",
+              "dutarion": 20,
+              "advises": "Be persistant"
+            },
+            {
+              "id": 2,
+              "name": "Speed Routine",
+              "theme": "U-0903295",
+              "numberOfTouch": "33",
+              "dutarion": 14,
+              "advises": "It takes some time to see the first results"
+            },
+            {
+              "id": 3,
+              "name": "Coordination Routine",
+              "theme": "U-545661",
+              "numberOfTouch": "47",
+              "dutarion": 15,
+              "advises": "Coordination is as important as everything else"
+            }
+        ];
+
+        var exercises = localStorage.exercises;
+        if (exercises){
+            exercises = JSON.parse(exercises);
+        } else {
+            exercises = [];
+        }
+
+        exercises = staticExercises.concat(exercises);
+
+        $(function() {
+            $('#inputTime').datetimepicker({format: 'LT', defaultDate: moment()});
+            $('#inputDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment()});
+            $('#inputEndTime').datetimepicker({format: 'LT', defaultDate: moment().add(90,'m')});
+            $('#inputEndDate').datetimepicker({format: 'YYYY-MM-DD', defaultDate: moment().add(90,'m')});
+
+            $.each(exercises,function(){
+                $('#inputExercise').append('<option value="' + this.id + '">' + this.name + '</option>>');
+            });
+
+            $('#inputExercise').multiselect({numberDisplayed: 1});
+
+            var states = new Bloodhound({
+              datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+              queryTokenizer: Bloodhound.tokenizers.whitespace,
+              local: fencers
+            });
+
+            $('#inputParticipants').typeahead({
+              hint: true,
+              highlight: true,
+              minLength: 1
+            },
+            {
+              name: 'states',
+              source: states,
+              display: 'value',
+              templates: {
+                empty: [
+                  '<div class="empty-message">',
+                    'unable to find fencer',
+                  '</div>'
+                ].join('\n'),
+                suggestion: Handlebars.compile('<div><img src="{{img}}"> <strong style="color: black;">{{value}}</strong></div>')
+              }
+            });
+
+            $('#inputParticipants').bind('typeahead:select', function(ev, suggestion) {
+                $("#participants").append("<div class='col-xs-6'><div class='participant'><img src='" + suggestion.img + "'>" + suggestion.value + "</div></div>");
+                participants.push(suggestion.id);
+                $('#inputParticipants').typeahead('val','');
+            });
+
+            var trainings = localStorage.trainings;
+            if (trainings){
+                trainings = JSON.parse(trainings);
+            } else {
+                trainings = [];
+            }
+
+            $("#new-training").click(function (e) {
+                var theExercises = [];
+                $.each(exercises, function(){
+                    var values = $("#inputExercise").val();
+                    var index = $.inArray(this.id.toString(), values);
+                    if(index > -1){
+                        theExercises.push(exercises[values[index]]);
+                    }
+                });
+
+
+                var newTraining = {
+                  "id": Math.floor(Math.random()*100000),
+                  "title": $("#inputName").val(),
+                  "category": $("#inputCategory").val(),
+                  "theme": $("#inputTheme").val(),
+                  "exercise": theExercises,
+                  "url": "/coach/trainings/start-training.html",
+                  "class": "event-important",
+                  "start": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
+                  "end": moment($('#inputDate').val() + " " + $('#inputTime').val(), "YYYY-MM-DD hh:mm a").unix()*1000,
+                  "participants": participants
+                };
+                trainings.push(newTraining);
+                localStorage.trainings = JSON.stringify(trainings);
+                window.location = "../calendar/index.html";
+            });
+
+            $("form").submit(function (e){e.preventDefault();});
+        });
+    </script>
+</body>
+</html>
