@@ -138,7 +138,7 @@
 		}, 1000);
 
 
-		var socket = io('http://fencing-api.herokuapp.com/tv-app');
+		var socket = io('https://fencing-api.herokuapp.com/tv-app');
 		socket.on('training started', function (meta){
 			startTraining(meta);
 			if (meta.activeExercise){
