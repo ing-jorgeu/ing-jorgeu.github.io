@@ -138,7 +138,7 @@
 		}, 1000);
 
 
-		var socket = io('http://6354b924.ngrok.io/tv-app');
+		var socket = io('http://fencing-api.herokuapp.com/tv-app');
 		socket.on('training started', function (meta){
 			startTraining(meta);
 			if (meta.activeExercise){
