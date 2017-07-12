@@ -1,95 +1,186 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
+	<title>Seyfor Screen</title>
+	<style>
 
-    <title>Seyfor</title>
-    <meta name="description" content="Fencing">
-    <meta name="author" content="ing.jorgeu@gmail.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="coach/css/bootstrap.min.css" rel="stylesheet">
-    <link href="coach/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="coach/css/style.css" rel="stylesheet">
+	@keyframes spinloop {
+		  0%   { transform: rotate(0deg); }
+		  40% { transform: rotate(180deg); }
+		  60% { transform: rotate(180deg); }
+		  100% { transform: rotate(0deg); }
+		}
+
+
+		html {
+			background: url('img/background.jpg') no-repeat center center fixed;
+			background-size: 100% 100%;
+		}
+
+		#content {
+			position: fixed;
+		    top: 0;
+		    bottom: 0;
+		    left: 20%;
+		    right: 20%;
+		    background-color: rgba(0,76,107,0.7);
+		}	
+
+		.diamond{
+			transform: rotate(45deg);
+		}
+
+		.diamond-content {
+			transform: rotate(-45deg);
+		}
+
+
+	</style>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0;">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#" style="padding: 5px 15px;">
-            <img alt="Brand" src="img/seyfor_sport_technology_logo.png" style="height: 100%;">
-          </a>
-        </div>
+	<div id="content">
+		<div id="home" class="hideable">
+			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
+				<div class="diamond-content" style="">
+					<img src="img/logo.png" style="width: 90%;height: 100%;margin-top: 22%;">
+				</div>
+				<div class="size-adjust" style="position: absolute;width: 50%;left: 107%;top: 0;background-color: rgba(255,255,255,0.75);">
+					<div style="transform: rotate(-45deg);text-align: center;">
+						<h2 id="clock" style="font-size: 5vw;margin-left: 8%;margin-top: 28%;color: rgba(0,76,107,1)">00:00</h2>
+					</div>
+				</div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a id="today">Today</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#" style="">
-                Jorge Urbina
-              </a>
-            </li>
-            <li>
-              <a href="#" style="padding: 2px 2px 2px 0;">
-                <img src="img/profile.png" style="height: 46px;border: 2px solid black;border-radius: 30px;">
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </nav>
+				<div class="size-adjust" style="position: absolute;width: 50%;right: 107%;bottom: 0;background-color: rgba(255,255,255,0.75);">
+				
+				</div>
+
+				<div class="size-adjust" style="position: absolute;width: 20%;right: 107%;bottom: 57%;background-color: rgba(255,255,255,0.75);animation: spinloop 10s infinite;">
+				
+				</div>
+			</div>
+		</div>
+		<div id="abouttostart" class="hideable" style="display: none;">
+			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
+				<div class="diamond-content" style="text-align: center;">
+					<h2 style="font-size: 3vw;">En garde!</h2>
+					<h1 class="trainingtitle" style="font-size: 4vw;color: rgba(0,76,107,1);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></h1>
+					<h2 style="font-size: 3vw;">Qui suit...</h2>
+				</div>
+			</div>
+		</div>
+		<div id="activeexercise" class="hideable" style="display: none;background-color: rgba(0,76,107,0.75);height: 100%;top: 0;margin-top: 0;color: #ffffff;">
+			<div style="padding-top: 5%;">
+				<div id="clock2" style="text-align: center;font-size: 6vw;background-color: #ffffff;color: rgb(0,76,107);width: 45%;margin-left: auto;margin-right: auto;margin-top: 0%;">00:00</div>
+			</div>
+			<h2 class="exercisetitle" style="font-size: 5vw;text-align: center;"></h2>
+			<p class="exerciseadvises" style="text-align: center;font-size: 3.5vw;"></p>
+		</div>
+		<div id="goodjob" class="hideable" style="display: none;">
+			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
+				<div class="diamond-content" style="text-align: center;">
+					<h1 style="font-size: 4vw;color: rgba(0,76,107,1);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin-top: 35%;">Bien joué!</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script>
+		$('.size-adjust').each(function (index, element){
+				$(element).height($(element).width());
+			});
+
+		$(window).on('resize orientationChange', function(event) {
+		    $('.size-adjust').each(function (index, element){
+				$(element).height($(element).width());
+			});
+		});
+		var clock = setInterval(function() {
+			$('#clock').text(moment().format('HH:mm'));
+		}, 1000);
 
 
-    <div id="leftbar" class="leftbar-outer">
-        <div class="leftbar-middle">
-            <div class="leftbar-inner">
-                <a id="leftbar-toggler" href="#" onclick="$('#leftbar').toggleClass('open');$('#leftbar-toggler .glyphicon').toggleClass('glyphicon-menu-right').toggleClass('glyphicon-menu-left');"><span class="glyphicon glyphicon-menu-right" aria-hidden="true" style="font-size: 17px;"></span></a>
-                <ul style="list-style-type: none;padding-left: 0;">
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div id="content" class="leftbar-outer">
-        <div class="leftbar-middle">
-            <div class="leftbar-inner">
-              <div class="container">
-                  <img src="img/banner_top.png" style="width: 80%;position: absolute;top: 10px;left: 10%;">
-                  <div class="row">
-                      <div class="col-xs-offset-1 col-xs-4">
-                          <a href="coach/index.html" class="grid-button btn btn-default">
-                              <span>I'm a coach</span>
-                          </a>
-                      </div>
-                      <div class="col-xs-offset-2 col-xs-4">
-                        <a href="fencerapp/index.html" class="grid-button btn btn-default">
-                            <span>I'm a fencer</span>
-                        </a>
-                      </div>
-                      <div class="col-xs-1">
 
-                      </div>
-                      <img src="img/banner_bottom.png" style="width: 80%;position: absolute;bottom: 10px;left: 10%;">
-                  </div>
-              </div>
-            </div>
-        </div>
 
-    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/60130e230f.js"></script>
-    <script src="js/moment-with-locales.js"></script>
-    <script src="js/common.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		var trainingStartTime = null;
+		var x = setInterval(function() {
+			if (!trainingStartTime){
+				return true;
+			}
+		  	// Get todays date and time
+			var now = new Date();
+
+			// Find the distance between now an the count down date
+			var distance = (now - trainingStartTime.getTime())/(1000);
+			now.setHours(0,0,0,0);
+			now.setSeconds(now.getSeconds() + distance);
+
+			$('#clock2').text(moment(now).format('HH:mm:ss'));
+		}, 1000);
+
+
+		var socket = io('http://6354b924.ngrok.io/tv-app');
+		socket.on('training started', function (meta){
+			startTraining(meta);
+			if (meta.activeExercise){
+				startExercise(meta.activeExercise);
+			}
+		});
+
+		socket.on('exercise started', function (exercise){
+			startExercise(exercise);
+		});
+
+		socket.on('training finished', function (){
+			trainingStartTime = null;
+			$('.hideable').hide();
+			$('#goodjob').show();
+			$(window).resize();
+			setTimeout(function () {
+				$('.hideable').hide();
+				$('#home').show();
+				$(window).resize();
+			},5000);
+			$(window).resize();
+		});
+
+
+		function startTraining(meta){
+			trainingStartTime = new Date(meta.started);
+			console.log(meta);
+			$('.trainingtitle').text(meta.training_session.event.name);
+			$('.hideable').hide();
+			$('#abouttostart').show();
+			$(window).resize();
+		};
+
+		function startExercise(exercise){
+			console.log(exercise);
+			$('.exercisetitle').text(exercise.name);
+			$('.exerciseadvises').text(exercise.advises);
+			$('.hideable').hide();
+			$('#activeexercise').show();
+			$(window).resize();
+		}
+	</script>
 </body>
 </html>
