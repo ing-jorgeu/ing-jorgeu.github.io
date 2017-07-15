@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Seyfor Screen</title>
+	<link href="https://fonts.googleapis.com/css?family=Rasa" rel="stylesheet">
 	<style>
 
 	@keyframes spinloop {
@@ -13,74 +14,254 @@
 
 
 		html {
-			background: url('img/background.jpg') no-repeat center center fixed;
-			background-size: 100% 100%;
+			/*background: url('img/background.jpg') no-repeat center center fixed;
+			background-size: 100% 100%;*/
+			font-family: 'Rasa', serif;
 		}
 
 		#content {
 			position: fixed;
-		    top: 0;
+		    top: 4vw;
 		    bottom: 0;
-		    left: 20%;
-		    right: 20%;
-		    background-color: rgba(0,76,107,0.7);
+		    left: 0;
+		    right: 0;
+		    background: linear-gradient(to bottom,  #444444 0%,#000000 100%);
 		}	
 
 		.diamond{
 			transform: rotate(45deg);
+			border: 1px solid #ffffff;
 		}
 
 		.diamond-content {
 			transform: rotate(-45deg);
 		}
 
+		#topbar{
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4vw;
+			background-color: #ffffff;
+		}
 
+		#date{
+			margin: 0;
+		    position: fixed;
+		    font-size: 1.4vw;
+		    top: 1.3vw;
+		    left: 1.3vw;
+		}
+
+		#training_title{
+			margin: 0;
+		    position: fixed;
+		    font-size: 1.4vw;
+		    top: 1.3vw;
+		    right: 1.3vw;	
+		}
+
+		#activeexercise_right{
+			box-shadow: inset 1px 0px 1px #ffffff;
+			overflow: visible;
+		}
+
+		#activeexercise_right ul {
+			list-style: none;
+			padding-left: 0;
+			margin-left: -0.25vw;
+			margin-top: 5vw;
+		}
+
+		#activeexercise_right ul li {
+			font-size: 1.75vw;
+			border-left: 0.5vw solid #ffffff;
+			padding-left: 2vw;
+			height: 6vw;
+		}
+
+		#activeexercise_right ul li:last-of-type {
+			border-color: rgba(0,0,0,0);
+		}
+
+		#activeexercise_right ul li span {
+			display: block;
+			transform: translateY(-0.20vw);
+		}
+
+		.smallball{
+			background-color: white;
+			border-radius: 100px;
+			width: 1.5vw;
+			height: 1.5vw;
+			display: inline-block;
+		    position: absolute;
+		    left: 79.25%;
+		}
+
+		.selectedsmallball{
+			background-color: #1f1f1f;
+		    border: 0.2vw solid white;
+		    left: 79%;
+		}
+
+		#adviseleftcontainer{
+			float: left;
+			width: 50%;
+			height: 100%;
+			box-shadow: inset -0.2vw 0px 0px #ffffff;
+
+		}
+
+		#adviserightcontainer{
+			float: left;
+			width: 50%;
+			height: 100%;
+			box-shadow: inset 0.2vw 0px 0px #ffffff;
+		}
+
+		.lightbulb{
+			    width: 8vw;
+			    height: 5vw;
+			    margin-left: auto;
+			    margin-right: auto;
+			    border-radius: 1vw;
+			    margin-top: -1vw;
+		}
+
+		.advise_p{
+			font-size: 2vw;
+    		padding: 2vw;
+		}
+
+		.glossy_green{
+			background: -moz-linear-gradient(top,  #c7ffc7 0%, #00ff00 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c7ffc7), color-stop(100%,#00ff00));
+			background: -webkit-linear-gradient(top,  #c7ffc7 0%,#00ff00 100%);
+			background: -o-linear-gradient(top,  #c7ffc7 0%,#00ff00 100%);
+			background: -ms-linear-gradient(top,  #c7ffc7 0%,#00ff00 100%);
+			background: linear-gradient(to bottom,  #c7ffc7 0%,#00ff00 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7ffc7', endColorstr='#00ff00',GradientType=0 );
+			border: 1px solid #1d6511;
+		}
+
+		.glossy_red{
+			background: -moz-linear-gradient(top,  #ffc0c0 0%, #ff0000 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc0c0), color-stop(100%,#ff0000));
+			background: -webkit-linear-gradient(top,  #ffc0c0 0%,#ff0000 100%);
+			background: -o-linear-gradient(top,  #ffc0c0 0%,#ff0000 100%);
+			background: -ms-linear-gradient(top,  #ffc0c0 0%,#ff0000 100%);
+			background: linear-gradient(to bottom,  #ffc0c0 0%,#ff0000 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc0c0', endColorstr='#ff0000',GradientType=0 );
+			border: 1px solid #1d6511;
+		}
+
+		#exercisetitlebar{
+			overflow: hidden;
+		}
+
+		#exercisetitlebar h3 {
+			font-size: 3vw;
+			float:left;
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			margin: 1vw 0;
+		}
+
+		#exercisetitlebar .applikebadge{
+			font-size: 2vw;
+			float:left;
+			display: inline-block;
+			width: 25%;
+			height: 100%;
+		}
+
+		.badge{
+			background-color: #017caf;
+		    border: 0.1vw solid #ffffff;
+		    border-radius: 1vw;
+		    width: 15vw;
+		    display: inline-block;
+		    margin-top: 1.5vw;
+		}
 	</style>
 </head>
 <body>
+	<div id="topbar">
+		<span id="date">Today</span>
+		<h2 id="clock" style="font-size: 3vw;margin: 0;margin-top: 0.5vw;text-align: center;">00:00</h2>
+		<span id="training_title" class="trainingtitle"></span>
+	</div>
 	<div id="content">
 		<div id="home" class="hideable">
-			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
+			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(0,0,0,0);left: 37%;top: 22%;">
 				<div class="diamond-content" style="">
 					<img src="img/logo.png" style="width: 90%;height: 100%;margin-top: 22%;">
 				</div>
-				<div class="size-adjust" style="position: absolute;width: 50%;left: 107%;top: 0;background-color: rgba(255,255,255,0.75);">
+				<div class="size-adjust" style="position: absolute;width: 50%;left: 107%;top: 0;background-color: rgba(0,0,0,0);border: 1px solid #ffffff;">
 					<div style="transform: rotate(-45deg);text-align: center;">
-						<h2 id="clock" style="font-size: 5vw;margin-left: 8%;margin-top: 28%;color: rgba(0,76,107,1)">00:00</h2>
 					</div>
 				</div>
 
-				<div class="size-adjust" style="position: absolute;width: 50%;right: 107%;bottom: 0;background-color: rgba(255,255,255,0.75);">
+				<div class="size-adjust" style="position: absolute;width: 50%;right: 107%;bottom: 0;background-color: rgba(0,0,0,0);border: 1px solid #ffffff;">
 				
 				</div>
 
-				<div class="size-adjust" style="position: absolute;width: 20%;right: 107%;bottom: 57%;background-color: rgba(255,255,255,0.75);animation: spinloop 10s infinite;">
+				<div class="size-adjust" style="position: absolute;width: 20%;right: 107%;bottom: 57%;background-color: rgba(0,0,0,0);border: 1px solid #ffffff;animation: spinloop 10s infinite;">
 				
 				</div>
 			</div>
 		</div>
-		<div id="abouttostart" class="hideable" style="display: none;">
-			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
-				<div class="diamond-content" style="text-align: center;">
-					<h2 style="font-size: 3vw;">En garde!</h2>
-					<h1 class="trainingtitle" style="font-size: 4vw;color: rgba(0,76,107,1);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></h1>
+		<div id="abouttostart" class="hideable" style="width: 100%;height: 100%;color: #ffffff;text-align: center;display: none;">
+					<h2 style="font-size: 3vw;margin-top: 18vw;">En garde!</h2>
+					<h1 class="trainingtitle" style="font-size: 4vw;color: #ffffff;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></h1>
 					<h2 style="font-size: 3vw;">Qui suit...</h2>
+		</div>
+		<div id="activeexercise" class="hideable" style="height: 100%;top: 0;margin-top: 0;color: #ffffff;display: none;">
+			<div id="activeexercise_left" style="float: left; height: 100%; width: 80%;">
+				<div id="exercisetitlebar" style="text-align: center;">
+					<div class="applikebadge">
+						<div class="badge touches"></div>
+					</div>
+					<h3 class="exercisetitle trainingtitle"></h3>
+					<div class="applikebadge">
+						<div class="badge mins"></div>
+					</div>
+				</div>
+				<div style="">
+					<div id="clock2" style="text-align: center;font-size: 6vw;background-color: #ffffff;color: #000000;width: 30%;border-radius: 1vw;margin-left: auto;margin-right: auto;margin-top: 0%;">00:00:00</div>
+				</div>
+				<div style="height: 100%;">
+					<div id="adviseleftcontainer">
+						<div class="lightbulb glossy_red" style="background-color: #ff0000;"></div>
+						<p class="advise_p advisesForRed">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra elit non tempus molestie. Maecenas dapibus metus id diam suscipit accumsan. Vestibulum ullamcorper massa at libero fermentum, ac lobortis odio hendrerit. Sed ultricies erat id auctor ultrices. Vestibulum bibendum nisl augue, sit amet dapibus tortor tincidunt sit amet. In quis lacus hendrerit, pulvinar massa quis, tincidunt orci. Suspendisse ultricies mi sit amet condimentum vestibulum. Sed finibus venenatis ligula, ac blandit nunc sollicitudin at. Sed ut purus dolor. Curabitur finibus nunc justo. Aliquam maximus leo sit amet fermentum molestie. Fusce vitae justo et nisi sagittis porttitor non a diam. Aenean dui odio, lacinia non metus in, rhoncus feugiat ex. In id orci risus. Curabitur rhoncus posuere sem, faucibus faucibus mauris fringilla facilisis.
+						</p>
+					</div>
+					<div id="adviserightcontainer">
+						<div class="lightbulb glossy_green" style="background-color: #00ff00;"></div>
+						<p class="advise_p advisesForGreen">
+							Nulla est metus, tristique sed tortor vitae, facilisis consectetur diam. Aliquam non risus a mi mollis varius tempus eget dui. Aliquam quam neque, laoreet et enim sed, blandit pulvinar lacus. Ut semper justo eu eros convallis scelerisque. Etiam quis tristique augue. Aliquam ligula leo, iaculis eget sagittis nec, scelerisque nec felis. Maecenas fermentum dui tristique, convallis mauris id, semper sem. Sed nunc mi, rhoncus sit amet lectus placerat, posuere convallis nisi. Nam pellentesque, est id congue venenatis, est ante pharetra felis, vel auctor mauris lacus vel urna. Donec viverra fermentum bibendum. Sed vel vestibulum velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id="activeexercise" class="hideable" style="display: none;background-color: rgba(0,76,107,0.75);height: 100%;top: 0;margin-top: 0;color: #ffffff;">
-			<div style="padding-top: 5%;">
-				<div id="clock2" style="text-align: center;font-size: 6vw;background-color: #ffffff;color: rgb(0,76,107);width: 45%;margin-left: auto;margin-right: auto;margin-top: 0%;">00:00</div>
+			<div id="activeexercise_right" style="float: left; height: 100%; width: 20%;">
+				<ul id="exerciseList">
+					<li><div class="smallball"></div><span>Exercise 1</span></li>
+					<li><div class="smallball"></div><span>Exercise 2</span></li>
+					<li><div class="smallball"></div><span>Exercise 3</span></li>
+					<li><div class="smallball"></div><span>Exercise 4</span></li>
+					<li><div class="smallball"></div><span>Exercise 5</span></li>
+					<li><div class="smallball"></div><span>Exercise 6</span></li>
+					<li><div class="smallball"></div><span>Exercise 7</span></li>
+				</ul>
 			</div>
-			<h2 class="exercisetitle" style="font-size: 5vw;text-align: center;"></h2>
-			<p class="exerciseadvises" style="text-align: center;font-size: 3.5vw;"></p>
 		</div>
-		<div id="goodjob" class="hideable" style="display: none;">
-			<div class="diamond size-adjust" style="position: fixed;width: 25%;background-color: rgba(255,255,255,0.75);left: 37%;top: 22%;">
-				<div class="diamond-content" style="text-align: center;">
-					<h1 style="font-size: 4vw;color: rgba(0,76,107,1);text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin-top: 35%;">Bien joué!</h1>
-				</div>
-			</div>
+		<div id="goodjob" class="hideable" style="width: 100%;height: 100%;color: #ffffff;text-align: center;display: none;">
+			<h1 style="font-size: 4vw;color: #ffffff;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin-top: 35%;">Bien joué!</h1>
 		</div>
 	</div>
 	<script
@@ -101,6 +282,7 @@
 		});
 		var clock = setInterval(function() {
 			$('#clock').text(moment().format('HH:mm'));
+			$('#date').text(moment().format('dddd MMMM Do YYYY'));
 		}, 1000);
 
 
@@ -122,15 +304,18 @@
 
 
 		var trainingStartTime = null;
+		var exerciseStartTime = null;
+		var currentAccumulated = 0;
+		var pausedTimer = false;
 		var x = setInterval(function() {
-			if (!trainingStartTime){
+			if (!exerciseStartTime || pausedTimer){
 				return true;
 			}
 		  	// Get todays date and time
 			var now = new Date();
 
 			// Find the distance between now an the count down date
-			var distance = (now - trainingStartTime.getTime())/(1000);
+			var distance = ((now - exerciseStartTime.getTime())/(1000)) + currentAccumulated;
 			now.setHours(0,0,0,0);
 			now.setSeconds(now.getSeconds() + distance);
 
@@ -138,20 +323,29 @@
 		}, 1000);
 
 
-		var socket = io('https://fencing-api.herokuapp.com/tv-app');
-		socket.on('training started', function (meta){
+		var socket = io('http://5a0a7add.ngrok.io/tv-app');
+		socket.on('training started', function (data){
+			console.log(data);
+			meta = data.meta;
+			currentAccumulated = data.acc
 			startTraining(meta);
 			if (meta.activeExercise){
 				startExercise(meta.activeExercise);
+				exerciseStartTime = new Date(data.lastExerciseStarted);
 			}
 		});
 
-		socket.on('exercise started', function (exercise){
-			startExercise(exercise);
+		socket.on('exercise started', function (data){
+			startExercise(data.exercise);
+			exerciseStartTime = new Date(data.lastExerciseStarted);
+			currentAccumulated = data.acc;
+			console.log(data);
 		});
 
 		socket.on('training finished', function (){
 			trainingStartTime = null;
+			exerciseStartTime = null;
+			currentAccumulated = 0;
 			$('.hideable').hide();
 			$('#goodjob').show();
 			$(window).resize();
@@ -163,20 +357,43 @@
 			$(window).resize();
 		});
 
+		socket.on('pause timer', function (){
+			pausedTimer = true;
+		});
+
 
 		function startTraining(meta){
 			trainingStartTime = new Date(meta.started);
 			console.log(meta);
 			$('.trainingtitle').text(meta.training_session.event.name);
+			$('#exerciseList').html('');
+			$.each(meta.exercises, function(index, element){
+				$('#exerciseList').append('<li id="exercise_n_' + element.id + '"><div class="smallball"></div><span>' + element.name + '</span></li>');	
+			});
+			
+
+
+
 			$('.hideable').hide();
 			$('#abouttostart').show();
 			$(window).resize();
 		};
 
 		function startExercise(exercise){
+			pausedTimer = false;
 			console.log(exercise);
+			exerciseStartTime = new Date();
 			$('.exercisetitle').text(exercise.name);
-			$('.exerciseadvises').text(exercise.advises);
+			$('.advisesForGreen').text(exercise.advisesForGreen);
+			$('.advisesForRed').text(exercise.advisesForRed);
+			$('.selectedsmallball').removeClass('selectedsmallball');
+			$('#exercise_n_' + exercise.id + ' .smallball').addClass('selectedsmallball');
+			if (exercise.nOfTouch){
+				$('.touches').text(exercise.nOfTouch + ' touches').css('opacity',1);	
+			} else {
+				$('.touches').text('').css('opacity',0);
+			}
+			$('.mins').text(exercise.duration + ' mins');
 			$('.hideable').hide();
 			$('#activeexercise').show();
 			$(window).resize();
