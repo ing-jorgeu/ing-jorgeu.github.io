@@ -19,13 +19,16 @@
 			font-family: 'Rasa', serif;
 		}
 
+		body {
+			background: radial-gradient(#444444 0%,#000000 100%);
+		}
+
 		#content {
 			position: fixed;
 		    top: 4vw;
 		    bottom: 0;
 		    left: 0;
 		    right: 0;
-		    background: linear-gradient(to bottom,  #444444 0%,#000000 100%);
 		}	
 
 		.diamond{
@@ -41,7 +44,7 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-			right: 0;
+			right: 20%;
 			height: 4vw;
 			background-color: #ffffff;
 		}
@@ -65,13 +68,14 @@
 		#activeexercise_right{
 			box-shadow: inset 1px 0px 1px #ffffff;
 			overflow: visible;
+			color: #ffffff;
 		}
 
 		#activeexercise_right ul {
 			list-style: none;
 			padding-left: 0;
 			margin-left: -0.25vw;
-			margin-top: 5vw;
+			margin-top: 2vw;
 		}
 
 		#activeexercise_right ul li {
@@ -97,13 +101,13 @@
 			height: 1.5vw;
 			display: inline-block;
 		    position: absolute;
-		    left: 79.25%;
+		    left: -0.75vw;
 		}
 
 		.selectedsmallball{
 			background-color: #1f1f1f;
 		    border: 0.2vw solid white;
-		    left: 79%;
+		    left: -1vw;
 		}
 
 		#adviseleftcontainer{
@@ -127,7 +131,7 @@
 			    margin-left: auto;
 			    margin-right: auto;
 			    border-radius: 1vw;
-			    margin-top: -1vw;
+			    margin-top: 2vw;
 		}
 
 		.advise_p{
@@ -189,10 +193,9 @@
 	</style>
 </head>
 <body>
-	<div id="topbar">
+	<div id="topbar" class="hideable" style="display: none;">
 		<span id="date">Today</span>
-		<h2 id="clock" style="font-size: 3vw;margin: 0;margin-top: 0.5vw;text-align: center;">00:00</h2>
-		<span id="training_title" class="trainingtitle"></span>
+		<h2 id="clock" style="font-size: 3vw;margin: 0;margin-top: 0.5vw;text-align: right;padding-right: 1vw;">00:00</h2>
 	</div>
 	<div id="content">
 		<div id="home" class="hideable">
@@ -202,6 +205,7 @@
 				</div>
 				<div class="size-adjust" style="position: absolute;width: 50%;left: 107%;top: 0;background-color: rgba(0,0,0,0);border: 1px solid #ffffff;">
 					<div style="transform: rotate(-45deg);text-align: center;">
+						<h2 id="clock3" style="font-size: 5vw;margin-left: 8%;margin-top: 28%;color: #ffffff;">00:00</h2>
 					</div>
 				</div>
 
@@ -215,7 +219,7 @@
 			</div>
 		</div>
 		<div id="abouttostart" class="hideable" style="width: 100%;height: 100%;color: #ffffff;text-align: center;display: none;">
-					<h2 style="font-size: 3vw;margin-top: 18vw;">En garde!</h2>
+					<h2 style="font-size: 3vw;margin-top: 15vw;">En garde!</h2>
 					<h1 class="trainingtitle" style="font-size: 4vw;color: #ffffff;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></h1>
 					<h2 style="font-size: 3vw;">Qui suit...</h2>
 		</div>
@@ -237,32 +241,28 @@
 					<div id="adviseleftcontainer">
 						<div class="lightbulb glossy_red" style="background-color: #ff0000;"></div>
 						<p class="advise_p advisesForRed">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pharetra elit non tempus molestie. Maecenas dapibus metus id diam suscipit accumsan. Vestibulum ullamcorper massa at libero fermentum, ac lobortis odio hendrerit. Sed ultricies erat id auctor ultrices. Vestibulum bibendum nisl augue, sit amet dapibus tortor tincidunt sit amet. In quis lacus hendrerit, pulvinar massa quis, tincidunt orci. Suspendisse ultricies mi sit amet condimentum vestibulum. Sed finibus venenatis ligula, ac blandit nunc sollicitudin at. Sed ut purus dolor. Curabitur finibus nunc justo. Aliquam maximus leo sit amet fermentum molestie. Fusce vitae justo et nisi sagittis porttitor non a diam. Aenean dui odio, lacinia non metus in, rhoncus feugiat ex. In id orci risus. Curabitur rhoncus posuere sem, faucibus faucibus mauris fringilla facilisis.
+							
 						</p>
 					</div>
 					<div id="adviserightcontainer">
 						<div class="lightbulb glossy_green" style="background-color: #00ff00;"></div>
 						<p class="advise_p advisesForGreen">
-							Nulla est metus, tristique sed tortor vitae, facilisis consectetur diam. Aliquam non risus a mi mollis varius tempus eget dui. Aliquam quam neque, laoreet et enim sed, blandit pulvinar lacus. Ut semper justo eu eros convallis scelerisque. Etiam quis tristique augue. Aliquam ligula leo, iaculis eget sagittis nec, scelerisque nec felis. Maecenas fermentum dui tristique, convallis mauris id, semper sem. Sed nunc mi, rhoncus sit amet lectus placerat, posuere convallis nisi. Nam pellentesque, est id congue venenatis, est ante pharetra felis, vel auctor mauris lacus vel urna. Donec viverra fermentum bibendum. Sed vel vestibulum velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							
 						</p>
 					</div>
 				</div>
 			</div>
-			<div id="activeexercise_right" style="float: left; height: 100%; width: 20%;">
-				<ul id="exerciseList">
-					<li><div class="smallball"></div><span>Exercise 1</span></li>
-					<li><div class="smallball"></div><span>Exercise 2</span></li>
-					<li><div class="smallball"></div><span>Exercise 3</span></li>
-					<li><div class="smallball"></div><span>Exercise 4</span></li>
-					<li><div class="smallball"></div><span>Exercise 5</span></li>
-					<li><div class="smallball"></div><span>Exercise 6</span></li>
-					<li><div class="smallball"></div><span>Exercise 7</span></li>
-				</ul>
-			</div>
+			
 		</div>
 		<div id="goodjob" class="hideable" style="width: 100%;height: 100%;color: #ffffff;text-align: center;display: none;">
-			<h1 style="font-size: 4vw;color: #ffffff;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin-top: 35%;">Bien joué!</h1>
+			<h1 style="font-size: 4vw;color: #ffffff;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin-top: 20vw;">Bien joué!</h1>
 		</div>
+	</div>
+	<div id="activeexercise_right" class="hideable" style="position: fixed; right: 0; top: 0; bottom: 0; height: 100%; width: 20%;display: none;">
+				<img src="img/logo.png" style="width: 80%;margin-left: 10%;margin-top: 1vw;">
+				<ul id="exerciseList">
+					
+				</ul>
 	</div>
 	<script
 	src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -281,49 +281,49 @@
 			});
 		});
 		var clock = setInterval(function() {
-			$('#clock').text(moment().format('HH:mm'));
+			$('#clock,#clock3').text(moment().format('HH:mm'));
 			$('#date').text(moment().format('dddd MMMM Do YYYY'));
 		}, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		var trainingStartTime = null;
 		var exerciseStartTime = null;
 		var currentAccumulated = 0;
 		var pausedTimer = false;
+		var currentExercise;
 		var x = setInterval(function() {
 			if (!exerciseStartTime || pausedTimer){
 				return true;
 			}
 		  	// Get todays date and time
 			var now = new Date();
-
+			var duration = currentExercise && currentExercise.duration? currentExercise.duration*60 : 0;
+			console.log(duration);
+			
 			// Find the distance between now an the count down date
-			var distance = ((now - exerciseStartTime.getTime())/(1000)) + currentAccumulated;
-			now.setHours(0,0,0,0);
-			now.setSeconds(now.getSeconds() + distance);
+			var distance = ((now.getTime() - exerciseStartTime.getTime())/(1000)) + currentAccumulated;
+			if (distance <= duration){
+				distance = duration - distance;
+				now.setHours(0,0,0,0);
+				now.setSeconds(now.getSeconds() + distance);
+				if (distance <= 60){
+					$('#clock2').html('<span style="color:orange;">' + moment(now).format('HH:mm:ss') + '</span>');
+				} else {
+					$('#clock2').text(moment(now).format('HH:mm:ss'));
+				}	
+			} else {
+				distance = distance - duration;
+				now.setHours(0,0,0,0);
+				now.setSeconds(now.getSeconds() + distance);
 
-			$('#clock2').text(moment(now).format('HH:mm:ss'));
+				$('#clock2').html('<span style="color:red;">- ' + moment(now).format('HH:mm:ss') + '</span>');
+			}
+
+			
 		}, 1000);
 
-
-		var socket = io('https://fencing-api.herokuapp.com/tv-app');
+		var socket = io('http://fencing-api.herokuapp.com/tv-app');
+		//var socket = io('http://5a0a7add.ngrok.io/tv-app');
 		socket.on('training started', function (data){
 			console.log(data);
 			meta = data.meta;
@@ -380,6 +380,7 @@
 		};
 
 		function startExercise(exercise){
+			currentExercise = exercise;
 			pausedTimer = false;
 			console.log(exercise);
 			exerciseStartTime = new Date();
@@ -395,7 +396,7 @@
 			}
 			$('.mins').text(exercise.duration + ' mins');
 			$('.hideable').hide();
-			$('#activeexercise').show();
+			$('#activeexercise,#topbar,#activeexercise_right').show();
 			$(window).resize();
 		}
 	</script>
