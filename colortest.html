@@ -37,7 +37,8 @@
       background-color: rgba(0,0,0,0.3);
     }
   </style>
-
+  
+  <link rel='stylesheet' href='spectrum.css' />
 </head>
 <body>
 
@@ -388,20 +389,21 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <script src='spectrum.js'></script>
 
 <div id="style-picker" class="widget" style="position: fixed; bottom: 20px; right: 20px; height: 200px; width: 500px;font-size: 18px;">
   <h3 style="text-align: center;font-size: 18px;">Style Picker</h3>
   <div>
-    <span style="float:left;width: 30%;padding-left: 10px;">Menu Color:</span><input id="menucolor" type="text" value="#000000" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="menucolorgo">Go!</button>
+    <span style="float:left;width: 30%;padding-left: 10px;">Menu Color:</span><input id="menucolor" type="color" value="#000000" style="width: 70%;float:left;"/>
   </div>
   <div>
-    <span style="float:left;width: 30%;padding-left: 10px;">Widget Color:</span><input id="widgetcolor" type="text" value="#000000" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="widgetcolorgo">Go!</button>
+    <span style="float:left;width: 30%;padding-left: 10px;">Widget Color:</span><input id="widgetcolor" type="color" value="#000000" style="width: 70%;float:left;"/>
   </div>
   <div>
-    <span style="float:left;width: 30%;padding-left: 10px;">Widget Opacity:</span><input id="menuopacity" type="text" value="0.3" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="menuopacitygo">Go!</button>
+    <span style="float:left;width: 30%;padding-left: 10px;">Widget Opacity:</span><input id="menuopacity" type="number" value="0.3" min="0" max="1" step="0.05" style="width: 70%;float:left;"/>
   </div>
   <div>
-    <span style="float:left;width: 30%;padding-left: 10px;">Background:</span><input id="backgroundch" type="text" value="" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="backgroundchgo">Go!</button>
+    <span style="float:left;width: 30%;padding-left: 10px;">Background URL:</span><input id="backgroundch" type="text" value="" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="backgroundchgo">Go!</button>
   </div>
 </div>
 
@@ -425,12 +427,12 @@
     }
   }
 
-  $('#menucolorgo').click(function () {
+  $('#menucolor').change(function () {
     $('#sidebar').css('background-color',$(menucolor).val().trim());
     $('img').css('border-color',$(menucolor).val().trim());
   });
 
-  $('#widgetcolorgo,#menuopacitygo').click(function () {
+  $('#widgetcolor,#menuopacity').change(function () {
     var arr = hexToRgb($('#widgetcolor').val().trim());
     var opacity = makeSureOpacity(parseFloat($('#menuopacity').val().trim()));
     $('.widget').css('background-color','rgba(' + arr.r + ',' + arr.g + ',' + arr.b + ',' + opacity + ')');
