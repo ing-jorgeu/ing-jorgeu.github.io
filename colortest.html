@@ -1,0 +1,443 @@
+<html lang="en" dir="ltr"><head>
+
+  <!-- Ionic Dev Server: Injected Logger Script -->
+  
+  <link href="__ion-dev-server/ion-dev.css?v=1.3.7" rel="stylesheet">
+  
+  
+  <meta charset="UTF-8">
+  <title>
+      Ionic Blank
+    </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+ 
+  <!-- cordova.js required for cordova apps -->
+  
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/angular-calendar.css" rel="stylesheet">
+  <style>
+    .widget{
+      background-color: rgba(0,0,0,0.3);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app class="app-root app-root-md md platform-core enable-hover" ng-version="4.1.2"><div app-viewport=""></div><ng-component class="app-root"><ion-nav id="nav" swipebackenabled="false" ng-reflect-swipe-back-enabled="false" ng-reflect-root="LoginPage" class="menu-content menu-content-overlay"><div nav-viewport=""></div><page-home class="ion-page show-page" hidden="" style="z-index: 100;"><ion-header class="header header-md" hidden="">
+  <ion-navbar class="toolbar toolbar-md"><div class="toolbar-background toolbar-background-md" ng-reflect-klass="toolbar-background" ng-reflect-ng-class="toolbar-background-md"></div><button class="back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md" ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-md"><span class="button-inner"><ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img" ng-reflect-klass="back-button-icon" ng-reflect-ng-class="back-button-icon-md" aria-label="arrow back" ng-reflect-name="md-arrow-back"></ion-icon><span class="back-button-text back-button-text-md" ng-reflect-klass="back-button-text" ng-reflect-ng-class="back-button-text-md"></span></span><div class="button-effect"></div></button><div class="toolbar-content toolbar-content-md" ng-reflect-klass="toolbar-content" ng-reflect-ng-class="toolbar-content-md">
+    <ion-title class="title title-md"><div class="toolbar-title toolbar-title-md" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-md">
+      Ionic Blank
+    </div></ion-title>
+  </div></ion-navbar>
+</ion-header>
+
+<ion-content class="content content-md"><div class="fixed-content"></div><div class="scroll-content">
+  
+<article class="container-fluid thecontent" id="content" style="background-image: url(&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVcDFhU6V8XstxqRnS966Y5SzaDnc0X7WZwxeU_EoVTbrMH0OC&quot;);">
+	<div class="row">
+		<div class="col-12">
+			<div style="background-color: rgba(255,255,255,0.5);overflow: auto;padding: 5px;min-height: 200px;">
+				<today-widget><div>
+	<h3 class="widget-title">
+		Aujourd’hui
+	</h3>	
+	<ion-list class="list list-md">
+		<!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+		<!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-item class="event item item-block item-md" text-center=""><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+			Aucun événement
+		</ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+	</ion-list>
+</div></today-widget>
+			</div>
+		</div>
+		
+	</div>
+	
+</article>
+</div></ion-content>
+</page-home><page-login class="ion-page show-page" hidden="" style="z-index: 101; transition-delay: initial; transition-property: none;"><ion-header class="header header-md" hidden="">
+  <ion-navbar class="toolbar toolbar-md"><div class="toolbar-background toolbar-background-md" ng-reflect-klass="toolbar-background" ng-reflect-ng-class="toolbar-background-md"></div><button class="back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button" ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-md"><span class="button-inner"><ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img" ng-reflect-klass="back-button-icon" ng-reflect-ng-class="back-button-icon-md" aria-label="arrow back" ng-reflect-name="md-arrow-back"></ion-icon><span class="back-button-text back-button-text-md" ng-reflect-klass="back-button-text" ng-reflect-ng-class="back-button-text-md"></span></span><div class="button-effect"></div></button><div class="toolbar-content toolbar-content-md" ng-reflect-klass="toolbar-content" ng-reflect-ng-class="toolbar-content-md">
+    <ion-title class="title title-md"><div class="toolbar-title toolbar-title-md" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-md">
+      Ionic Blank
+    </div></ion-title>
+  </div></ion-navbar>
+</ion-header>
+
+<ion-content class="content content-md"><div class="fixed-content"></div><div class="scroll-content">
+  
+<article class="container-fluid thecontent" id="content" style="background-image: url(&quot;assets/img/background.jpg&quot;);">
+	<div class="row">
+		<div class="col-12 col-sm-6 offset-sm-3">
+				<div class="centered-container outer">
+					<div class="middle">
+						<div class="inner grid-element">
+							<img id="login-picture" src="assets/img/fencer-default.png">
+							<form novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid">
+								<ion-list class="list list-md">
+
+									<ion-item class="item item-block item-md item-label-stacked input-has-value item-input ng-untouched ng-pristine ng-valid"><div class="item-inner"><div class="input-wrapper"><ion-label stacked="" class="label label-md" id="lbl-1">Email</ion-label><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><ion-input formcontrolname="email" type="email" class="input input-md ng-untouched ng-pristine ng-valid" ng-reflect-name="email" ng-reflect-type="email"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><input class="text-input text-input-md ng-untouched ng-pristine ng-valid" ng-reflect-klass="text-input" ng-reflect-ng-class="text-input-md" ng-reflect-is-disabled="false" ng-reflect-model="coach@seyfor.com" type="email" placeholder="" min="undefined" max="undefined" step="undefined" aria-labelledby="lbl-1" formcontrolname="email" ng-reflect-name="email" ng-reflect-type="email" autocomplete="off" autocorrect="off"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><button class="text-input-clear-icon button button-md button-clear button-clear-md" clear="" ion-button="" type="button" ng-reflect-clear="" hidden=""><span class="button-inner"></span><div class="button-effect"></div></button><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></ion-input></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+
+									<ion-item class="item item-block item-md item-label-stacked input-has-value item-input ng-untouched ng-pristine ng-valid"><div class="item-inner"><div class="input-wrapper"><ion-label stacked="" class="label label-md" id="lbl-2">Mot de passe</ion-label><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><ion-input formcontrolname="password" type="password" class="input input-md ng-untouched ng-pristine ng-valid" ng-reflect-name="password" ng-reflect-type="password"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><input class="text-input text-input-md ng-untouched ng-pristine ng-valid" ng-reflect-klass="text-input" ng-reflect-ng-class="text-input-md" ng-reflect-is-disabled="false" ng-reflect-model="12345678" type="password" placeholder="" min="undefined" max="undefined" step="undefined" aria-labelledby="lbl-2" formcontrolname="password" ng-reflect-name="password" ng-reflect-type="password" autocomplete="off" autocorrect="off"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><button class="text-input-clear-icon button button-md button-clear button-clear-md" clear="" ion-button="" type="button" ng-reflect-clear="" hidden=""><span class="button-inner"></span><div class="button-effect"></div></button><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></ion-input></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+
+									<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+									<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+
+									<ion-item class="item item-block item-md" style="font-size: 13px; text-align: center;"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+										Passez votre badge NFC
+									</ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+
+								</ion-list>	
+								<div style="overflow: hidden;">
+									<button float-right="" ion-button="" class="button button-md button-default button-default-md"><span class="button-inner">Login</span><div class="button-effect"></div></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</article>
+</div></ion-content>
+</page-login><page-home class="ion-page show-page" style="z-index: 102;"><ion-header class="header header-md" hidden="">
+  <ion-navbar class="toolbar toolbar-md"><div class="toolbar-background toolbar-background-md" ng-reflect-klass="toolbar-background" ng-reflect-ng-class="toolbar-background-md"></div><button class="back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button" ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-md"><span class="button-inner"><ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img" ng-reflect-klass="back-button-icon" ng-reflect-ng-class="back-button-icon-md" aria-label="arrow back" ng-reflect-name="md-arrow-back"></ion-icon><span class="back-button-text back-button-text-md" ng-reflect-klass="back-button-text" ng-reflect-ng-class="back-button-text-md"></span></span><div class="button-effect"></div></button><div class="toolbar-content toolbar-content-md" ng-reflect-klass="toolbar-content" ng-reflect-ng-class="toolbar-content-md">
+    <ion-title class="title title-md"><div class="toolbar-title toolbar-title-md" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-md">
+      Ionic Blank
+    </div></ion-title>
+  </div></ion-navbar>
+</ion-header>
+
+<ion-content class="content content-md"><div class="fixed-content"></div><div class="scroll-content">
+  
+<article class="container-fluid thecontent" id="content" style="background-image: url(&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVcDFhU6V8XstxqRnS966Y5SzaDnc0X7WZwxeU_EoVTbrMH0OC&quot;);">
+	<div class="row">
+		<div class="col-12">
+			<div class="widget" style="overflow: auto;padding: 5px;min-height: 200px;">
+				<today-widget><div>
+	<h3 class="widget-title">
+		Aujourd’hui
+	</h3>	
+	<ion-list class="list list-md">
+		<!--bindings={
+  "ng-reflect-ng-for-of": "[object Object]"
+}--><!---->
+			<ion-item class="event item item-block item-md"><ion-icon item-start="" name="bookmark" role="img" class="icon icon-md ion-md-bookmark item-icon" aria-label="bookmark" ng-reflect-name="bookmark"></ion-icon><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+				 00:00 - Test
+			</ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+			<div class="openItem" style="max-height: 0px;">
+				<next-training-widget ng-reflect-training-session="[object Object]">	<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><exercise-tendency-bar ng-reflect-selected-exercises="[object Object],[object Object"><div class="selectedExercisesBar">
+	<ion-item class="item item-block item-md" no-lines=""><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-icon color="primary" item-start="" name="walk" role="img" class="icon icon-md icon-md-primary ion-md-walk item-icon" aria-label="walk" ng-reflect-color="primary" ng-reflect-name="walk"></ion-icon><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+		
+		<div class="exerciseTypeCounterBar" style="height: 20px; background-color: rgb(1, 124, 175); float: left; text-align: left; color: rgb(255, 255, 255); font-size: 12px; width: 26%;">
+			<span style="padding-left: 20px"> 17 mins</span>
+		</div>
+		<div class="exerciseTypeCounterBar" style="height: 20px; background-color: rgb(34, 62, 74); float: left; text-align: right; color: rgb(255, 255, 255); font-size: 12px; width: 74%;">
+			<span style="padding-right: 20px">50 mins </span>
+		</div>
+		
+	</ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-icon color="secondary" item-end="" name="ios-locate-outline" role="img" class="icon icon-md icon-md-secondary ion-ios-locate-outline item-icon" aria-label="locate outline" ng-reflect-color="secondary" ng-reflect-name="ios-locate-outline"></ion-icon><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+	<!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-item class="item item-block item-md" no-lines=""><ion-badge color="light" item-start="" class="badge badge-md badge-md-light" ng-reflect-color="light">
+			2 Physique
+		</ion-badge><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+		
+		
+	</ion-label></div><ion-badge color="light" item-end="" class="badge badge-md badge-md-light" ng-reflect-color="light">
+			4 Technique
+		</ion-badge><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+</div></exercise-tendency-bar>
+	<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+	<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><ion-item class="item item-block item-md"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-md">
+		
+		
+	</ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><button ion-button="" item-end="" class="button button-md button-default button-default-md item-button"><span class="button-inner">Commencer</span><div class="button-effect"></div></button><!--bindings={
+  "ng-reflect-ng-if": null
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+</next-training-widget>
+			</div>
+		
+		<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+	</ion-list>
+</div></today-widget>
+			</div>
+		</div>
+		
+	</div>
+	
+</article>
+</div></ion-content>
+</page-home><div class="nav-decor"></div></ion-nav>
+<navbar><div id="topbar">
+	<div id="clock">
+		<clock><span>Tuesday July 18 2017, 20:46</span></clock>
+	</div>
+	
+	<ul class="breadcrumbs">
+		<!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+		<li>Accueil</li>
+	</ul>
+	
+</div>
+
+<nav id="sidebar">
+	<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><div id="usermenu">
+		<img id="profilepicture" src="assets/img/miyagi.jpg">
+		<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><span id="username">Miyagi Sensei</span>
+		<div id="usermenuoptions">
+			<a href="#" id="usermenuoptions"><i aria-hidden="true" class="fa fa-cog"></i></a>
+			<a href="#" id="usermenuonotifications"><i aria-hidden="true" class="fa fa-bell"></i></a>
+			<a href="#" id="usermenuologout"><i aria-hidden="true" class="fa fa-sign-out"></i></a>
+		</div>
+	</div>
+	<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><ul id="navigation">
+		<!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li class="active">
+			<img class="navigation-icon" src="assets/img/home-icon.png">
+			<img class="navigation-icon active" src="assets/img/home-icon-active.png">
+			<a>Accueil</a>
+			<div class="submenu">
+				<ul>
+					<!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+				</ul>
+			</div>
+		</li><li>
+			<img class="navigation-icon" src="assets/img/calendar-icon.png">
+			<img class="navigation-icon active" src="assets/img/calendar-icon-active.png">
+			<a>Calendrier</a>
+			<div class="submenu">
+				<ul>
+					<!--bindings={
+  "ng-reflect-ng-for-of": ""
+}-->
+				</ul>
+			</div>
+		</li><li>
+			<img class="navigation-icon" src="assets/img/exercises-icon.png">
+			<img class="navigation-icon active" src="assets/img/exercises-icon-active.png">
+			<a>Entrainements</a>
+			<div class="submenu">
+				<ul>
+					<!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li>
+						<a>Mes modèles</a>
+					</li><li>
+						<a>Mes exercices</a>
+					</li><li>
+						<a>Mon programme</a>
+					</li>
+				</ul>
+			</div>
+		</li><li>
+			<img class="navigation-icon" src="assets/img/tournament-icon.png">
+			<img class="navigation-icon active" src="assets/img/tournament-icon-active.png">
+			<a>Tournois</a>
+			<div class="submenu">
+				<ul>
+					<!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li>
+						<a>Organiser un tournoi</a>
+					</li><li>
+						<a>Commencer un tournoi</a>
+					</li><li>
+						<a>Statistiques</a>
+					</li>
+				</ul>
+			</div>
+		</li><li>
+			<img class="navigation-icon" src="assets/img/fencers-icon.png">
+			<img class="navigation-icon active" src="assets/img/fencers-icon-active.png">
+			<a>Escrimeurs</a>
+			<div class="submenu">
+				<ul>
+					<!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><li>
+						<a>Liste</a>
+					</li><li>
+						<a>Ajouter un escrimeur</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+	<img id="logo-bottom" src="assets/img/seyfor_sport_technology_logo.png">
+</nav>
+<!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><img id="floatingprofilepicture" src="assets/img/miyagi.jpg"></navbar>
+<ion-menu role="navigation" side="left" type="overlay" class="menu-enabled" ng-reflect-content="[object Object]"><div class="menu-inner">
+  <ion-content class="content content-md"><div class="fixed-content"></div><div class="scroll-content">
+   
+  </div></ion-content>
+
+</div><ion-backdrop disable-activated="" role="presentation" tappable=""></ion-backdrop></ion-menu></ng-component><div overlay-portal="" ng-reflect-_overlay-portal=""></div><div overlay-portal="" ng-reflect-_overlay-portal=""></div><div class="loading-portal" overlay-portal="" ng-reflect-_overlay-portal=""></div><div class="toast-portal" ng-reflect-_overlay-portal="10000"></div><div class="click-block click-block-enabled"></div></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  
+
+  <!-- The bundle js is generated during the build process -->
+  
+
+  <!-- Ionic Dev Server: Injected LiveReload Script -->
+  
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<div id="style-picker" class="widget" style="position: fixed; bottom: 20px; right: 20px; height: 200px; width: 500px;font-size: 18px;">
+  <h3 style="text-align: center;font-size: 18px;">Style Picker</h3>
+  <div>
+    <span style="float:left;width: 30%;padding-left: 10px;">Menu Color:</span><input id="menucolor" type="text" value="#000000" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="menucolorgo">Go!</button>
+  </div>
+  <div>
+    <span style="float:left;width: 30%;padding-left: 10px;">Widget Color:</span><input id="widgetcolor" type="text" value="#000000" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="widgetcolorgo">Go!</button>
+  </div>
+  <div>
+    <span style="float:left;width: 30%;padding-left: 10px;">Widget Opacity:</span><input id="menuopacity" type="text" value="0.3" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="menuopacitygo">Go!</button>
+  </div>
+  <div>
+    <span style="float:left;width: 30%;padding-left: 10px;">Background:</span><input id="backgroundch" type="text" value="" style="width: 50%;float:left;"/><button value="go" style="float:left;width: 20%;font-size: 25px;" id="backgroundchgo">Go!</button>
+  </div>
+</div>
+
+<script>
+  function hexToRgb(hex) {
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+      } : null;
+  }
+
+  function makeSureOpacity(num){
+    if (num < 0){
+      return 0;
+    } else if (num > 1){
+      return 1
+    } else {
+      return num;
+    }
+  }
+
+  $('#menucolorgo').click(function () {
+    $('#sidebar').css('background-color',$(menucolor).val().trim());
+    $('img').css('border-color',$(menucolor).val().trim());
+  });
+
+  $('#widgetcolorgo,#menuopacitygo').click(function () {
+    var arr = hexToRgb($('#widgetcolor').val().trim());
+    var opacity = makeSureOpacity(parseFloat($('#menuopacity').val().trim()));
+    $('.widget').css('background-color','rgba(' + arr.r + ',' + arr.g + ',' + arr.b + ',' + opacity + ')');
+  });
+
+  $('#backgroundchgo').click(function () {
+    $('.thecontent').css('background-image',"url('" + $('#backgroundch').val().trim() + "')");
+  });
+</script>
+</body></html>
