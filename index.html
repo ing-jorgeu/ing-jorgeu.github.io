@@ -324,7 +324,7 @@
 	    }
 
 	    function stopVideo() {
-	    	if (!player){
+	    	if (!player || !player.stopVideo){
 	    		return;
 	    	}
 	    	player.stopVideo();
