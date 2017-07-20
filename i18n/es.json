@@ -136,5 +136,18 @@
 	"Load": "Cargar",
 	"Confirm": "Confirmar",
 	"Skip": "Saltar",
-	"Load training model": "Cargar modelo de entrenamiento"
+	"Load training model": "Cargar modelo de entrenamiento",
+
+	"Finish": "Finalizar",
+	"Finish training": "Finalizar entrenamiento",
+	"If you finish this training now you won't be able change it later.": "Si finalizas este entrenamiento ahora no serás capaz de cambiarlo después",
+	"Yes": "Sí",
+	"No": "No",
+	"Save training model?": "¿Guardar modelo de entrenamiento?",
+	"You can reuse this training model in the future": "Puedes reusar este modelo de entrenamiento en el futuro",
+	"Delete Model": "Borrar Modelo",
+	"You are about to delete this model": "Estás a punto de borrar este modelo",
+	"Are you sure you want to leave?": "¿Seguro que quieres salir?",
+	"You will lose all non saved changes in this page.": "Perderás todos los cambios no guardados en esta página",
+	"Leave": "Salir"
 }
