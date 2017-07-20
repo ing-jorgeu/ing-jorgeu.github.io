@@ -328,7 +328,7 @@
 	    		return;
 	    	}
 	    	player.stopVideo();
-	      	$('#fsplayer').hide();
+	      	$('#player').hide();
 	    }
 
 	    function pauseVideo() {
@@ -385,7 +385,7 @@
 	    	} else {
 	    		urlParameters = parse_query_string(currentExercise.video.trim().replace(/[^\?]*\?/,''));
 		    	player.loadVideoById(urlParameters.v);
-		    	$('#fsplayer').show();	
+		    	$('#player').show();	
 	    	}
 	    };
 
