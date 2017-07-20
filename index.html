@@ -287,7 +287,6 @@
 	    	player = new YT.Player('player', {
 	      		height: '100%',
 	      		width: '100%',
-	      		videoId: 'M7lc1UVf-VE',
 	      		playerVars: {
 	      			autoplay: 1,
 	      			controls: 0,
@@ -307,21 +306,18 @@
 	    // 4. The API will call this function when the video player is ready.
 	    function onPlayerReady(event) {
 	      	//event.target.playVideo();
-	      	console.log('ready bitch');
 	    }
 
 	    // 5. The API calls this function when the player's state changes.
 	    //    The function indicates that when playing a video (state=1),
 	    //    the player should play for six seconds and then stop.
 	    function onPlayerStateChange(event) {
-	    	console.log('state change');
 	    	if (event.data == YT.PlayerState.ENDED) {
 	      		stopVideo();
 	      	}
 	    }
 
 	    function onError(event){
-	    	console.log('error bitch');
 	    	setTimeout(function () {
 	    		stopVideo();
 	    	},3000);
