@@ -1,3 +1,4 @@
 {
-	"You still have # trainings to prepare in the next few months": "You still have {{pendingEvents}} trainings to prepare in the next few months"
+	"You still have # trainings to prepare in the next few months": "You still have {{pendingEvents}} trainings to prepare in the next few months",
+	"Welcome back #name": "Welcome back {{name}}
 }
